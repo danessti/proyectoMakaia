@@ -36,10 +36,6 @@ public class Reservation {
     @Column(nullable = false)
     private Date fecha_hora_reserva;
 
-//    @OneToOne
-//    @JoinColumn(name = "id_estado_reserva", nullable = false)
-//    private Estados_reserva estado_reserva;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "status_reservation", nullable = false)
     private ReservationStatus reservationStatus;

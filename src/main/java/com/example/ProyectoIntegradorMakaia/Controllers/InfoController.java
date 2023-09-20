@@ -17,9 +17,9 @@ public class InfoController {
     }
 
     @PostMapping
-    public ResponseEntity<InfoContact> createInfo(@RequestBody InfoContact infoContact) {
+    public String createInfo(@RequestBody InfoContact infoContact) {
         InfoContact newInfoContac = infoService.createInfoContac(infoContact);
-        return new ResponseEntity<>(newInfoContac, HttpStatus.CREATED);
+        return "Guardado con exito";
     }
 
     @GetMapping("/{id}")

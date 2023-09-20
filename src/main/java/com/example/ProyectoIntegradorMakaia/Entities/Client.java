@@ -35,7 +35,7 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations;
 
-    @OneToOne(mappedBy = "client")
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
     private InfoContact info_contacto;
 
 }
