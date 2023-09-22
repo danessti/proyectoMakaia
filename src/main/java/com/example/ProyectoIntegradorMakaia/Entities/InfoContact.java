@@ -1,12 +1,11 @@
 package com.example.ProyectoIntegradorMakaia.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data // Genera getters y setters
 @AllArgsConstructor // Genera un constructor que acepta todos los campos
@@ -20,7 +19,8 @@ public class InfoContact {
     private Long id_info;
 
     @OneToOne
-    @JoinColumn(name = "client_id", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "client_id")
     private Client client;
 
     @Column(nullable = false)

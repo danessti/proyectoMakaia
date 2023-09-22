@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/infos")
 public class InfoController {
@@ -16,10 +18,16 @@ public class InfoController {
         this.infoService = infoService;
     }
 
+    @GetMapping
+    public ResponseEntity<List<InfoContact>> getAllInfoContact() {
+            List<InfoContact> infoContacts = infoService.getAllInfoContacts();
+            return new ResponseEntity<>(infoContacts, HttpStatus.OK);
+    }
+
     @PostMapping
-    public String createInfo(@RequestBody InfoContact infoContact) {
-        InfoContact newInfoContac = infoService.createInfoContac(infoContact);
-        return "Guardado con exito";
+    public ResponseEntity<InfoContact> createInfo(@RequestBody InfoContact infoContact) {
+        InfoContact newInfoContact = infoService.createInfoContac(infoContact);
+        return new ResponseEntity<>(newInfoContact, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -34,18 +42,18 @@ public class InfoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<InfoContact> updateInfoContac(@PathVariable Long id, @RequestBody InfoContact updateInfoContac) {
-        InfoContact infoContac = infoService.updateInfo(id, updateInfoContac);
+    public ResponseEntity<InfoContact> updateInfoContac(@PathVariable Long id, @RequestBody InfoContact updateInfoContact) {
+        InfoContact infoContact = infoService.updateInfo(id, updateInfoContact);
 
-        if (infoContac != null){
-            return new ResponseEntity<>(infoContac, HttpStatus.OK);
+        if (infoContact != null){
+            return new ResponseEntity<>(infoContact, HttpStatus.OK);
         }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<InfoContact> deleteInfoContac(@PathVariable Long id) {
+    public ResponseEntity<InfoContact> deleteInfoContact(@PathVariable Long id) {
         infoService.deleteInfo(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

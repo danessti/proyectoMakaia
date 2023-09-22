@@ -5,6 +5,8 @@ import com.example.ProyectoIntegradorMakaia.Repositories.InfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InfoService {
 
@@ -17,6 +19,10 @@ public class InfoService {
 
     public InfoContact createInfoContac(InfoContact infoContact) {
         return this.infoRepository.save(infoContact);
+    }
+
+    public List<InfoContact> getAllInfoContacts() {
+        return (List<InfoContact>) infoRepository.findAll();
     }
 
     public InfoContact getInfoById(Long id) {

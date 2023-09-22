@@ -27,7 +27,13 @@ public class AirportController {
         return new ResponseEntity<>(airports, HttpStatus.OK);
     }
 
-//    Endpoint para crear un aeropuerto
+    @PostMapping
+    public ResponseEntity<Airport> createAirport(@RequestBody Airport airport) {
+        Airport newAirport = airportService.createAirport(airport);
+        return new ResponseEntity<>(newAirport, HttpStatus.CREATED);
+    }
+
+//    Endpoint para obtener un aeropuerto por su id
     @GetMapping("/{id}")
     public ResponseEntity<Airport> getAirportById(@PathVariable Long id) {
         Airport airport = airportService.getAirportById(id);
@@ -37,12 +43,6 @@ public class AirportController {
         }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-
-    @PostMapping
-    public ResponseEntity<Airport> createAirport(@RequestBody Airport airport) {
-        Airport newAirport = airportService.createAirport(airport);
-        return new ResponseEntity<>(newAirport, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

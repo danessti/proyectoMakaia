@@ -1,5 +1,6 @@
 package com.example.ProyectoIntegradorMakaia.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
+@AllArgsConstructor // Crea un constructor  argumentos
 @NoArgsConstructor // Crea un constructor sin argumentos
 @Entity
 @Table(name = "client")
@@ -36,6 +37,7 @@ public class Client {
     private List<Reservation> reservations;
 
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
-    private InfoContact info_contacto;
+    @JsonIgnore
+    private InfoContact infoContact;
 
 }

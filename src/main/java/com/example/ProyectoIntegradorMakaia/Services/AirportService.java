@@ -21,12 +21,12 @@ public class AirportService {
         return (List<Airport>) airportRepository.findAll();
     }
 
-    public Airport getAirportById(Long id) {
-        return airportRepository.findById(id).orElse(null);
-    }
-
     public Airport createAirport(Airport airport) {
         return this.airportRepository.save(airport);
+    }
+
+    public Airport getAirportById(Long id) {
+        return airportRepository.findById(id).orElse(null);
     }
 
     public Airport updateAirport(Long id, Airport updateAirport) {

@@ -1,5 +1,6 @@
 package com.example.ProyectoIntegradorMakaia.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,23 +22,29 @@ public class Flight {
     private Long id_flight;
  
     @ManyToOne
-    @JoinColumn(name = "airportOrigin_id", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "airportOrigin_id")
     private Airport airportOrigin;
 
     @ManyToOne
-    @JoinColumn(name = "airportDestination_id", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "airportDestination_id")
     private Airport airportDestination;
 
-    @Column(nullable = false)
-    private Date fecha_hora_salida;
+//    fecha hora de salida
+    @Column(name = "date_hour_exit", nullable = false)
+    private Date dateHourExit;
 
-    @Column(nullable = false)
-    private Date fecha_hora_llegada;
+//    fecha hora de llegada
+    @Column(name = "date_hour_arrival", nullable = false)
+    private Date dateHourArrival;
 
     @ManyToOne
-    @JoinColumn(name = "airplane_id", nullable = false)
+    @JsonIgnore
+    @JoinColumn(name = "airplane_id")
     private Airplane airplane;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "flights")
     private Set<Reservation> reservations = new HashSet<>();
 
