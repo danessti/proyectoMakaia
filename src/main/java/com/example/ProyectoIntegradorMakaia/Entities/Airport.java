@@ -1,5 +1,6 @@
 package com.example.ProyectoIntegradorMakaia.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,9 +32,11 @@ public class Airport {
     @Column(name = "code_iata_oaci",nullable = false)
     private String code;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "airportOrigin", cascade = CascadeType.ALL)
     private Set<Flight> flightsOrigin;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "airportDestination")
     private List<Flight> flightsDestination;
 

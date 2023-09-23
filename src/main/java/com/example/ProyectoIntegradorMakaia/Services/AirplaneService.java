@@ -17,7 +17,7 @@ public class AirplaneService {
         this.repository = aircraft;
     }
 
-    public List<Airplane> getAllAirplane() {
+    public List<Airplane> getAllAirplanes() {
         return (List<Airplane>) repository.findAll();
     }
 

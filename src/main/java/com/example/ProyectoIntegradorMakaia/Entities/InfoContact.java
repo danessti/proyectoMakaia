@@ -19,7 +19,6 @@ public class InfoContact {
     private Long id_info;
 
     @OneToOne
-    @JsonIgnore
     @JoinColumn(name = "client_id")
     private Client client;
 

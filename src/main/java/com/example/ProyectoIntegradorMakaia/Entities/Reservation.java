@@ -1,6 +1,8 @@
 package com.example.ProyectoIntegradorMakaia.Entities;
 
 import com.example.ProyectoIntegradorMakaia.Utils.ReservationStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +16,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "reserva")
+@Table(name = "reservation")
 public class Reservation {
 
     @Id
@@ -23,7 +25,7 @@ public class Reservation {
 
 //    cada cliente puede tener muchas reservas, y cada reserva está asociada a un cliente específico a través de la columna
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false)
+    @JoinColumn(name = "cliente_id")
     private Client client;
 
     @ManyToMany
@@ -31,10 +33,11 @@ public class Reservation {
             name = "reservation_flight",
             joinColumns = @JoinColumn(name = "reservation_id"),
             inverseJoinColumns = @JoinColumn(name = "flight_id"))
+    @JsonIgnore
     private Set<Flight> flights = new HashSet<>();
 
-    @Column(nullable = false)
-    private Date fecha_hora_reserva;
+    @Column(name = "date_hour_reservation", nullable = false)
+    private Date dateHourReservation;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_reservation", nullable = false)

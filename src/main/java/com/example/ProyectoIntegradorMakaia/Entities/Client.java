@@ -34,6 +34,7 @@ public class Client {
     private char gender;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<Reservation> reservations;
 
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)

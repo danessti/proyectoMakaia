@@ -22,12 +22,10 @@ public class Flight {
     private Long id_flight;
  
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "airportOrigin_id")
     private Airport airportOrigin;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "airportDestination_id")
     private Airport airportDestination;
 
@@ -40,12 +38,12 @@ public class Flight {
     private Date dateHourArrival;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "airplane_id")
     private Airplane airplane;
 
-    @JsonIgnore
+
     @ManyToMany(mappedBy = "flights")
+    @JsonIgnore
     private Set<Reservation> reservations = new HashSet<>();
 
 }

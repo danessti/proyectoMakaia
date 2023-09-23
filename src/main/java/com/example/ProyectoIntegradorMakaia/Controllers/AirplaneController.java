@@ -20,9 +20,9 @@ public class AirplaneController {
         this.airplaneService = airplaneService;
     }
 
-    @GetMapping()
-    public ResponseEntity<List<Airplane>> getAllAirplane() {
-        List<Airplane> airplanes = airplaneService.getAllAirplane();
+    @GetMapping
+    public ResponseEntity<List<Airplane>> getAllAirplanes() {
+        List<Airplane> airplanes = airplaneService.getAllAirplanes();
         return new ResponseEntity<>(airplanes, HttpStatus.OK);
     }
 

@@ -1,0 +1,612 @@
+{
+	"info": {
+		"_postman_id": "96205e1c-23d6-4767-9fe3-c2f2402914fd",
+		"name": "Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28972140"
+	},
+	"item": [
+		{
+			"name": "obtener aeropuertos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/airports"
+			},
+			"response": []
+		},
+		{
+			"name": "crear aeropuerto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameAirport\" : \"Aeropuerto 1\",\r\n    \"city\" : \"Ciudad 1\",\r\n    \"country\" : \"Pais 1\",\r\n    \"code\" : \"ACP123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airports"
+			},
+			"response": []
+		},
+		{
+			"name": "crear aeropuerto 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameAirport\" : \"Aeropuerto 2\",\r\n    \"city\" : \"ciudad\",\r\n    \"country\" : \"Colombia\",\r\n    \"code\" : \"AC123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airports"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar aeropuerto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nameAirport\": \"Aeropuerto 1.0\",\r\n        \"city\": \"ciudad 1.0\",\r\n        \"country\": \"Colombia 1.0\",\r\n        \"code\": \"AC123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airports/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar aeropuerto 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nameAirport\": \"Aeropuerto 2.0\",\r\n        \"city\": \"ciudad 2.0\",\r\n        \"country\": \"Colombia 2.0\",\r\n        \"code\": \"AC123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airports/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar aeropuerto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/airports/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar aeropuerto 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/airports/2"
+			},
+			"response": []
+		},
+		{
+			"name": "obtener aviones",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin123",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/airplanes"
+			},
+			"response": []
+		},
+		{
+			"name": "crear avion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1\",\r\n    \"passengerCapacity\": \"50\",\r\n    \"yearProduction\": \"1999-01-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes"
+			},
+			"response": []
+		},
+		{
+			"name": "crear avion 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 2\",\r\n    \"passengerCapacity\": \"60\",\r\n    \"yearProduction\": \"2010-01-12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar avion",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin123",
+						"username": "admin"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1.0\",\r\n    \"passengerCapacity\": 50,\r\n    \"yearProduction\": \"1999-10-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar avion 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 2.0\",\r\n    \"passengerCapacity\": \"60\",\r\n    \"yearProduction\": \"1999-01-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar avion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/airplanes/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar avion 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/airplanes/2"
+			},
+			"response": []
+		},
+		{
+			"name": "obtener clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/clients"
+			},
+			"response": []
+		},
+		{
+			"name": "crear cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Daniel\",\r\n  \"lastName\": \"Espinosa\",\r\n  \"birthdate\": \"1999-08-06\",\r\n  \"gender\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/clients"
+			},
+			"response": []
+		},
+		{
+			"name": "crear contacto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n    \"id_client\": 1\r\n  },\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Principal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/infos"
+			},
+			"response": []
+		},
+		{
+			"name": "crear cliente 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ed\",\r\n    \"lastName\": \"Gutiérrez\",\r\n    \"birthdate\": \"1999-08-06\",\r\n    \"gender\": \"M\",\r\n    \"client\": {\r\n    \"id_client\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/clients"
+			},
+			"response": []
+		},
+		{
+			"name": "crear contacto 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"email2@gmail.com\",\r\n    \"numberPhone\": \"654321\",\r\n    \"address\": \"direccion 2\",\r\n    \"client\": {\r\n    \"id_client\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/infos"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Espinosa\",\r\n  \"lastName\": \"Daniel\",\r\n  \"birthdate\": \"1999-08-06\",\r\n  \"gender\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/clients/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar contacto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n    \"id_client\": 1\r\n  },\r\n  \"email\": \"correo2@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Segunda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/infos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar cliente 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gutiérrez\",\r\n    \"lastName\": \"Ed\",\r\n    \"birthdate\": \"1999-08-06\",\r\n    \"gender\": \"M\",\r\n    \"client\": {\r\n    \"id_client\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/clients/2"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar contacto 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"email@gmail.com\",\r\n    \"numberPhone\": \"123456\",\r\n    \"address\": \"direccion 1\",\r\n    \"client\": {\r\n    \"id_client\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/infos/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/clients/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar cliente 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/clients/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar info",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/infos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar info 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/infos/2"
+			},
+			"response": []
+		},
+		{
+			"name": "obtener vuelos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/flights"
+			},
+			"response": []
+		},
+		{
+			"name": "crear vuelo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/flights"
+			},
+			"response": []
+		},
+		{
+			"name": "crear vuelo 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/flights"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar vuelo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/flights/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar vuelo 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/flights/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar vuelo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/flights/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar vuelo 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/flights/2"
+			},
+			"response": []
+		},
+		{
+			"name": "obtener reservas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/reservations"
+			},
+			"response": []
+		},
+		{
+			"name": "crear reserva",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 1\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 1\r\n        },\r\n        {\r\n            \"id_flight\": 2\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/reservations"
+			},
+			"response": []
+		},
+		{
+			"name": "crear reserva 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 2\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 2\r\n        },\r\n        {\r\n            \"id_flight\": 1\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-01-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/reservations"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar reserva",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 2\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 2\r\n        },\r\n        {\r\n            \"id_flight\": 1\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-02-23\", \r\n    \"reservationStatus\": \"CONFIRMED\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/reservations/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar reserva 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 1\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 1\r\n        },\r\n        {\r\n            \"id_flight\": 2\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"COMPLETED\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/reservations/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar reserva",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/reservations/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar reserva 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/reservations/2"
+			},
+			"response": []
+		}
+	]
+}
