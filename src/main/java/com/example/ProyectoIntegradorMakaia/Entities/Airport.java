@@ -29,9 +29,6 @@ public class Airport {
     @Column(nullable = false)
     private String country;
 
-    @Column(name = "code_iata_oaci",nullable = false)
-    private String code;
-
     @JsonIgnore
     @OneToMany(mappedBy = "airportOrigin", cascade = CascadeType.ALL)
     private Set<Flight> flightsOrigin;

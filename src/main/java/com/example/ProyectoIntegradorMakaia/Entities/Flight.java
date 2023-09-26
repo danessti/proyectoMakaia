@@ -20,7 +20,7 @@ public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_flight;
- 
+
     @ManyToOne
     @JoinColumn(name = "airportOrigin_id")
     private Airport airportOrigin;
@@ -41,6 +41,8 @@ public class Flight {
     @JoinColumn(name = "airplane_id")
     private Airplane airplane;
 
+    @Column(name = "code_iata_oaci")
+    private String code;
 
     @ManyToMany(mappedBy = "flights")
     @JsonIgnore

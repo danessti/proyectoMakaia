@@ -19,14 +19,18 @@ public class Airplane {
     private Long id_airplane;
 
 //    segun la mi indagado la traducción más adecuada para ''modelo de avion' es "aircraft model"
-    @Column(name = "airplane_model",nullable = false)
+    @Column(name = "airplane_model", nullable = false)
     private String airplaneModel;
 
-    @Column(name = "passenger_capacity",nullable = false)
+    @Column(name = "passenger_capacity", nullable = false)
     private int passengerCapacity;
 
 //    Traducción más usada para año de fabricación al inglés
-    @Column(name = "year_production",nullable = false)
+    @Column(name = "year_production", nullable = false)
     private Date yearProduction;
+
+    @ManyToOne
+    @JoinColumn(name = "airline_id", nullable = false)
+    private Airline airline;
 
 }
