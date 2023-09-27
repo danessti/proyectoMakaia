@@ -53,8 +53,17 @@ public class FlightService {
             throw new IllegalArgumentException("El nombre de la aerolínea debe tener al menos 2 caracteres.");
         }
 
+//        consultar la cantidad actual de vuelo asociado a la aerolínea
+        int flightCount = flightRepository.countByAirline(airline);
+
+//        formatear el número obtenido en un formato de cuatro dígitos
+        String codeConsetive = String.format("%04d", flightCount + 1);
+
 //        generar el código consecutivo para el vuelo
-        String codeIata = airline.getName().substring(0, 2).toUpperCase();
+        String codeAirline = airline.getName().substring(0, 2).toUpperCase();
+
+//        generar el código IATA final
+        String codeIata = codeAirline + " " + codeConsetive;
 
 //        se guarda el codigo del vuelo creado anteriormente
         flight.setCode(codeIata);
@@ -76,7 +85,7 @@ public class FlightService {
             existingFlight.setDateHourExit(updateFlight.getDateHourExit());
             existingFlight.setAirportDestination(updateFlight.getAirportDestination());
             existingFlight.setAirplane(updateFlight.getAirplane());
-            existingFlight.setReservations(updateFlight.getReservations());
+            existingFlight.setReservation(updateFlight.getReservation());
             return flightRepository.save(existingFlight);
         }
 

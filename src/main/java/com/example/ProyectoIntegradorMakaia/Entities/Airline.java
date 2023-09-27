@@ -24,10 +24,7 @@ public class Airline {
     @Column(nullable = false)
     private String name;
 
-//    el campo unique = true es para no se repita otro codigo de vuelo ya que cada uno debe ser único
-//    @Column(name = "code_iata", unique = true)
-//    private String code;
-
+    @Temporal(TemporalType.DATE)
     @Column(name = "founded_date", nullable = false)
     private Date foundedDate;
 

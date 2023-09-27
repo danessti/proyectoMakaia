@@ -28,13 +28,9 @@ public class Reservation {
     @JoinColumn(name = "cliente_id")
     private Client client;
 
-    @ManyToMany
-    @JoinTable(
-            name = "reservation_flight",
-            joinColumns = @JoinColumn(name = "reservation_id"),
-            inverseJoinColumns = @JoinColumn(name = "flight_id"))
-    @JsonIgnore
-    private Set<Flight> flights = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "flight_id")
+    private Flight flight;
 
     @Column(name = "date_hour_reservation", nullable = false)
     private Date dateHourReservation;

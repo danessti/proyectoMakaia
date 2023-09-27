@@ -44,8 +44,7 @@ public class Flight {
     @Column(name = "code_iata_oaci")
     private String code;
 
-    @ManyToMany(mappedBy = "flights")
-    @JsonIgnore
-    private Set<Reservation> reservations = new HashSet<>();
+    @OneToOne(mappedBy = "flight")
+    private Reservation reservation;
 
 }

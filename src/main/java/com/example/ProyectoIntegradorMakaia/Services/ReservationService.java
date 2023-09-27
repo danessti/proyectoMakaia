@@ -34,7 +34,7 @@ public class ReservationService {
 
         if (existingReservation != null) {
             existingReservation.setClient(updateReservation.getClient());
-            existingReservation.setFlights(updateReservation.getFlights());
+            existingReservation.setFlight(updateReservation.getFlight());
             existingReservation.setDateHourReservation(updateReservation.getDateHourReservation());
             existingReservation.setReservationStatus(updateReservation.getReservationStatus());
             return repository.save(existingReservation);
