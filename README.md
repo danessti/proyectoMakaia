@@ -26,13 +26,13 @@ El backend proporciona servicios para buscar vuelos, realizar reservas, gestiona
 
 ## Documentación
 
-Diagrama UML [db_project]
+Diagrama UML [Modelado]
 
-![db_project.png](db_project.png)
+![Modeldado.jpg](Modeldado.jpg)
 
 ## Descripción
 
-El diagrama UML db_project se ha creado para proporcionar una representación
+El diagrama UML Modelado se ha creado para proporcionar una representación
 visual de la estructura y las relaciones clave en mi proyecto. Este diagrama es una 
 herramienta esencial para comprender la arquitectura y el diseño general
 de la aplicación, lo que facilita la colaboración y el desarrollo eficiente.

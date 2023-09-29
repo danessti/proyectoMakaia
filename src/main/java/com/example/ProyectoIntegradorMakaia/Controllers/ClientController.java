@@ -29,7 +29,7 @@ public class ClientController {
     @PostMapping
     public ResponseEntity<Client> createClient(@RequestBody Client client) {
         Client newClient = clientService.createClient(client);
-        return new ResponseEntity<>(newClient, HttpStatus.OK);
+        return new ResponseEntity<>(newClient, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")

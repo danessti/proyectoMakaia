@@ -21,20 +21,15 @@ public class AirplaneService {
         return (List<Airplane>) repository.findAll();
     }
 
-    public Airplane getAirplaneById(Long id) {
-        return repository.findById(id).orElse(null);
-    }
-
     public Airplane createAirplane(Airplane aircraft) {
         return this.repository.save(aircraft);
     }
 
-    public void deleteAirplane(Long id) {
-        this.repository.deleteById(id);
+    public Airplane getAirplaneById(Long id) {
+        return repository.findById(id).orElse(null);
     }
 
     public Airplane updateAirplane(Long id, Airplane updateAircraft) {
-
         Airplane existingAirplane = repository.findById(id).orElse(null);
 
         if (existingAirplane != null) {
@@ -46,6 +41,10 @@ public class AirplaneService {
 
         return null;
 
+    }
+
+    public void deleteAirplane(Long id) {
+        this.repository.deleteById(id);
     }
 
 }

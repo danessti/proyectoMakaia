@@ -55,6 +55,48 @@
 			"response": []
 		},
 		{
+			"name": "buscar aeropuerto por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nameAirport\": \"Aeropuerto 2.0\",\r\n        \"city\": \"ciudad 2.0\",\r\n        \"country\": \"Colombia 2.0\",\r\n        \"code\": \"AC123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airports/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar aeropuerto por id 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nameAirport\": \"Aeropuerto 2.0\",\r\n        \"city\": \"ciudad 2.0\",\r\n        \"country\": \"Colombia 2.0\",\r\n        \"code\": \"AC123\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airports/2"
+			},
+			"response": []
+		},
+		{
 			"name": "actualizar aeropuerto",
 			"request": {
 				"method": "PUT",
@@ -109,6 +151,141 @@
 			"response": []
 		},
 		{
+			"name": "obtener aerolineas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/airlines"
+			},
+			"response": []
+		},
+		{
+			"name": "crear aerolinea",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"avianca\",\r\n    \"foundedDate\": \"2020-09-25\",\r\n    \"website\": \"avianca.com\",\r\n    \"description\": \"gestor de vuelos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines"
+			},
+			"response": []
+		},
+		{
+			"name": "crear aerolinea 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"colpatria\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"colpatria.com\",\r\n    \"description\": \"gestor de vuelos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar aerolinea por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/airlines/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar aerolinea por id 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/airlines/2"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar aerolinea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"happy\",\r\n    \"foundedDate\": \"2020-04-25\",\r\n    \"website\": \"happy.com\",\r\n    \"description\": \"gestor de vuelos happy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar aerolinea 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"toppa\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"toppa.com\",\r\n    \"description\": \"gestor de vuelos toppa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar aerolinea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"happy\",\r\n    \"foundedDate\": \"2020-04-25\",\r\n    \"website\": \"happy.com\",\r\n    \"description\": \"gestor de vuelos happy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar aerolinea 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"toppa\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"toppa.com\",\r\n    \"description\": \"gestor de vuelos toppa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/2"
+			},
+			"response": []
+		},
+		{
 			"name": "obtener aviones",
 			"request": {
 				"auth": {
@@ -131,7 +308,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1\",\r\n    \"passengerCapacity\": \"50\",\r\n    \"yearProduction\": \"1999-01-11\"\r\n}",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1\",\r\n    \"passengerCapacity\": \"50\",\r\n    \"yearProduction\": \"1999-01-11\",\r\n    \"airline\": { \"idAirline\": 1 }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -149,7 +326,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"airplaneModel\": \"Modelo 2\",\r\n    \"passengerCapacity\": \"60\",\r\n    \"yearProduction\": \"2010-01-12\"\r\n}",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 2\",\r\n    \"passengerCapacity\": \"60\",\r\n    \"yearProduction\": \"2010-01-12\",\r\n    \"airline\": { \"idAirline\": 2 }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -157,6 +334,87 @@
 					}
 				},
 				"url": "localhost:8080/airplanes"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar avion por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin123",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1.0\",\r\n    \"passengerCapacity\": 50,\r\n    \"yearProduction\": \"1999-10-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar avion por id 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin123",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1.0\",\r\n    \"passengerCapacity\": 50,\r\n    \"yearProduction\": \"1999-10-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes/2"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar avion 2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin123",
+						"username": "admin"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1.0\",\r\n    \"passengerCapacity\": 50,\r\n    \"yearProduction\": \"1999-10-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/airplanes/2"
 			},
 			"response": []
 		},
@@ -255,7 +513,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n    \"id_client\": 1\r\n  },\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Principal\"\r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 1 },\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Principal\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -299,6 +557,90 @@
 					}
 				},
 				"url": "localhost:8080/infos"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar cliente por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Espinosa\",\r\n  \"lastName\": \"Daniel\",\r\n  \"birthdate\": \"1999-08-06\",\r\n  \"gender\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/clients/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar contacto por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n    \"id_client\": 1\r\n  },\r\n  \"email\": \"correo2@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Segunda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/infos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar contacto por id 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n    \"id_client\": 1\r\n  },\r\n  \"email\": \"correo2@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Segunda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/infos/2"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar cliente por id 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Espinosa\",\r\n  \"lastName\": \"Daniel\",\r\n  \"birthdate\": \"1999-08-06\",\r\n  \"gender\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/clients/2"
 			},
 			"response": []
 		},
@@ -415,7 +757,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/flights"
+				"url": "localhost:8080/v1/flights"
 			},
 			"response": []
 		},
@@ -426,14 +768,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1\r\n  }\r\n}",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-25T14:12:00Z\",\r\n  \"dateHourArrival\": \"2023-09-25T16:24:00Z\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1\r\n  }\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "localhost:8080/flights"
+				"url": "localhost:8080/v1/flights"
 			},
 			"response": []
 		},
@@ -444,6 +786,27 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-25T14:00:00Z\",\r\n  \"dateHourArrival\": \"2023-09-25T16:00:00Z\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/flights"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar vuelo por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
 					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 2\r\n  }\r\n}",
 					"options": {
 						"raw": {
@@ -451,7 +814,28 @@
 						}
 					}
 				},
-				"url": "localhost:8080/flights"
+				"url": "localhost:8080/v1/flights/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar vuelo por id 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"dateHourExit\": \"2023-09-22T10:00:00\",\r\n  \"dateHourArrival\": \"2023-09-22T12:00:00\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/flights/2"
 			},
 			"response": []
 		},
@@ -469,7 +853,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/flights/1"
+				"url": "localhost:8080/v1/flights/1"
 			},
 			"response": []
 		},
@@ -487,7 +871,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/flights/1"
+				"url": "localhost:8080/v1/flights/1"
 			},
 			"response": []
 		},
@@ -496,7 +880,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/flights/1"
+				"url": "localhost:8080/v1/flights/1"
 			},
 			"response": []
 		},
@@ -505,7 +889,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/flights/2"
+				"url": "localhost:8080/v1/flights/2"
 			},
 			"response": []
 		},
@@ -525,7 +909,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 1\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 1\r\n        },\r\n        {\r\n            \"id_flight\": 2\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 1 },\r\n    \"flight\": { \"id_flight\": 1 },\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"PENDING\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -543,7 +927,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 2\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 2\r\n        },\r\n        {\r\n            \"id_flight\": 1\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-01-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 2 },\r\n    \"flight\": { \"id_flight\": 1 },\r\n    \"dateHourReservation\": \"2023-01-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -555,9 +939,12 @@
 			"response": []
 		},
 		{
-			"name": "actualizar reserva",
+			"name": "buscar reserva por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "PUT",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -573,13 +960,52 @@
 			"response": []
 		},
 		{
+			"name": "buscar reserva por id 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 2\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 2\r\n        },\r\n        {\r\n            \"id_flight\": 1\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-02-23\", \r\n    \"reservationStatus\": \"CONFIRMED\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/reservations/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar reserva",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client\": { \"id_client\": 2 },\r\n    \"flight\": { \"id_flight\": 2 },\r\n    \"dateHourReservation\": \"2023-02-23\", \r\n    \"reservationStatus\": \"CONFIRMED\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/reservations/2"
+			},
+			"response": []
+		},
+		{
 			"name": "actualizar reserva 2",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 1\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 1\r\n        },\r\n        {\r\n            \"id_flight\": 2\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"COMPLETED\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 1 },\r\n    \"flight\": { \"id_flight\": 1 },\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"COMPLETED\" \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

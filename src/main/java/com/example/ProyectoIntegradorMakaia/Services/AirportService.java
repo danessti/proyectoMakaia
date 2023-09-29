@@ -34,7 +34,6 @@ public class AirportService {
 
         if (existingAirport != null) {
             existingAirport.setNameAirport(updateAirport.getNameAirport());
-            existingAirport.setCode(updateAirport.getCode());
             existingAirport.setCity(updateAirport.getCity());
             existingAirport.setCountry(updateAirport.getCountry());
             return airportRepository.save(existingAirport);

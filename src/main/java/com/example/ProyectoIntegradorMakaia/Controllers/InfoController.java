@@ -27,7 +27,7 @@ public class InfoController {
     @PostMapping
     public ResponseEntity<InfoContact> createInfo(@RequestBody InfoContact infoContact) {
         InfoContact newInfoContact = infoService.createInfoContac(infoContact);
-        return new ResponseEntity<>(newInfoContact, HttpStatus.OK);
+        return new ResponseEntity<>(newInfoContact, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")

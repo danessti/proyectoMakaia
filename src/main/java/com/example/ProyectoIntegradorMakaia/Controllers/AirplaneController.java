@@ -26,6 +26,12 @@ public class AirplaneController {
         return new ResponseEntity<>(airplanes, HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<Airplane> createAirplane(@RequestBody Airplane airplane) {
+        Airplane newAirplane = airplaneService.createAirplane(airplane);
+        return new ResponseEntity<>(newAirplane, HttpStatus.CREATED);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Airplane> getAirplaneById(@PathVariable Long id) {
         Airplane airplane = airplaneService.getAirplaneById(id);
@@ -35,12 +41,6 @@ public class AirplaneController {
         }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-
-    @PostMapping
-    public ResponseEntity<Airplane> createAirplane(@RequestBody Airplane airplane) {
-        Airplane newAirplane = airplaneService.createAirplane(airplane);
-        return new ResponseEntity<>(newAirplane, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
