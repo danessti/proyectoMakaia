@@ -151,6 +151,141 @@
 			"response": []
 		},
 		{
+			"name": "obtener aerolineas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/airlines"
+			},
+			"response": []
+		},
+		{
+			"name": "crear aerolinea",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"avianca\",\r\n    \"foundedDate\": \"2020-09-25\",\r\n    \"website\": \"avianca.com\",\r\n    \"description\": \"gestor de vuelos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines"
+			},
+			"response": []
+		},
+		{
+			"name": "crear aerolinea 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"colpatria\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"colpatria.com\",\r\n    \"description\": \"gestor de vuelos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar aerolinea por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/airlines/1"
+			},
+			"response": []
+		},
+		{
+			"name": "buscar aerolinea por id 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/v1/airlines/2"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar aerolinea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"happy\",\r\n    \"foundedDate\": \"2020-04-25\",\r\n    \"website\": \"happy.com\",\r\n    \"description\": \"gestor de vuelos happy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/1"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar aerolinea 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"toppa\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"toppa.com\",\r\n    \"description\": \"gestor de vuelos toppa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/2"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar aerolinea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"happy\",\r\n    \"foundedDate\": \"2020-04-25\",\r\n    \"website\": \"happy.com\",\r\n    \"description\": \"gestor de vuelos happy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/1"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar aerolinea 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"toppa\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"toppa.com\",\r\n    \"description\": \"gestor de vuelos toppa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/v1/airlines/2"
+			},
+			"response": []
+		},
+		{
 			"name": "obtener aviones",
 			"request": {
 				"auth": {
@@ -378,7 +513,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n    \"id_client\": 1\r\n  },\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Principal\"\r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 1 },\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"numberPhone\": \"+1234567890\",\r\n  \"address\": \"123 Calle Principal\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -618,141 +753,6 @@
 			"response": []
 		},
 		{
-			"name": "obtener aerolineas",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "localhost:8080/v1/airlines"
-			},
-			"response": []
-		},
-		{
-			"name": "crear aerolinea",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"avianca\",\r\n    \"foundedDate\": \"2020-09-25\",\r\n    \"website\": \"avianca.com\",\r\n    \"description\": \"gestor de vuelos\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/v1/airlines"
-			},
-			"response": []
-		},
-		{
-			"name": "crear aerolinea 2",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"colpatria\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"colpatria.com\",\r\n    \"description\": \"gestor de vuelos\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/v1/airlines"
-			},
-			"response": []
-		},
-		{
-			"name": "buscar aerolinea por id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "localhost:8080/v1/airlines/1"
-			},
-			"response": []
-		},
-		{
-			"name": "buscar aerolinea por id 2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "localhost:8080/v1/airlines/2"
-			},
-			"response": []
-		},
-		{
-			"name": "actualizar aerolinea",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"happy\",\r\n    \"foundedDate\": \"2020-04-25\",\r\n    \"website\": \"happy.com\",\r\n    \"description\": \"gestor de vuelos happy\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/v1/airlines/1"
-			},
-			"response": []
-		},
-		{
-			"name": "actualizar aerolinea 2",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"toppa\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"toppa.com\",\r\n    \"description\": \"gestor de vuelos toppa\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/v1/airlines/2"
-			},
-			"response": []
-		},
-		{
-			"name": "eliminar aerolinea",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"happy\",\r\n    \"foundedDate\": \"2020-04-25\",\r\n    \"website\": \"happy.com\",\r\n    \"description\": \"gestor de vuelos happy\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/v1/airlines/1"
-			},
-			"response": []
-		},
-		{
-			"name": "eliminar aerolinea 2",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"toppa\",\r\n    \"foundedDate\": \"2020-08-06\",\r\n    \"website\": \"toppa.com\",\r\n    \"description\": \"gestor de vuelos toppa\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/v1/airlines/2"
-			},
-			"response": []
-		},
-		{
 			"name": "obtener vuelos",
 			"request": {
 				"method": "GET",
@@ -768,7 +768,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-25T14:00:00Z\",\r\n  \"dateHourArrival\": \"2023-09-25T16:00:00Z\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1,\r\n    \"airline\": {\r\n      \"name\": \"AVIANCA\"\r\n    }\r\n  }\r\n}\r\n",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-25T14:12:00Z\",\r\n  \"dateHourArrival\": \"2023-09-25T16:24:00Z\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1\r\n  }\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -786,7 +786,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-25T14:00:00Z\",\r\n  \"dateHourArrival\": \"2023-09-25T16:00:00Z\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 1\r\n  }\r\n}",
+					"raw": "{\r\n  \"airportOrigin\": {\r\n    \"id_airport\": 1\r\n  },\r\n  \"airportDestination\": {\r\n    \"id_airport\": 2\r\n  },\r\n  \"dateHourExit\": \"2023-09-25T14:00:00Z\",\r\n  \"dateHourArrival\": \"2023-09-25T16:00:00Z\",\r\n  \"airplane\": {\r\n    \"id_airplane\": 2\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -909,7 +909,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 1\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 1\r\n        },\r\n        {\r\n            \"id_flight\": 2\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 1 },\r\n    \"flight\": { \"id_flight\": 1 },\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"PENDING\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -927,7 +927,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 2\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 2\r\n        },\r\n        {\r\n            \"id_flight\": 1\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-01-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 2 },\r\n    \"flight\": { \"id_flight\": 1 },\r\n    \"dateHourReservation\": \"2023-01-30\", \r\n    \"reservationStatus\": \"PENDING\" \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -987,14 +987,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 2\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 2\r\n        },\r\n        {\r\n            \"id_flight\": 1\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-02-23\", \r\n    \"reservationStatus\": \"CONFIRMED\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 2 },\r\n    \"flight\": { \"id_flight\": 2 },\r\n    \"dateHourReservation\": \"2023-02-23\", \r\n    \"reservationStatus\": \"CONFIRMED\" \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "localhost:8080/reservations/1"
+				"url": "localhost:8080/reservations/2"
 			},
 			"response": []
 		},
@@ -1005,7 +1005,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client\": {\r\n        \"id_client\": 1\r\n    },\r\n    \"flights\": [\r\n        {\r\n            \"id_flight\": 1\r\n        },\r\n        {\r\n            \"id_flight\": 2\r\n        }\r\n    ],\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"COMPLETED\" \r\n}",
+					"raw": "{\r\n    \"client\": { \"id_client\": 1 },\r\n    \"flight\": { \"id_flight\": 1 },\r\n    \"dateHourReservation\": \"2023-09-30\", \r\n    \"reservationStatus\": \"COMPLETED\" \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

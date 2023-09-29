@@ -85,7 +85,7 @@ public class FlightService {
             existingFlight.setDateHourExit(updateFlight.getDateHourExit());
             existingFlight.setAirportDestination(updateFlight.getAirportDestination());
             existingFlight.setAirplane(updateFlight.getAirplane());
-            existingFlight.setReservation(updateFlight.getReservation());
+            existingFlight.setReservations(updateFlight.getReservations());
             return flightRepository.save(existingFlight);
         }
 

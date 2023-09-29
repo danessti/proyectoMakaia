@@ -44,7 +44,8 @@ public class Flight {
     @Column(name = "code_iata_oaci")
     private String code;
 
-    @OneToOne(mappedBy = "flight")
-    private Reservation reservation;
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Reservation> reservations;
 
 }

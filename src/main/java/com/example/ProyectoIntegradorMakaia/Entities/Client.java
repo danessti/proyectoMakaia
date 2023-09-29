@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor // Crea un constructor  argumentos
@@ -33,9 +35,10 @@ public class Client {
     @Column(nullable = false)
     private char gender;
 
-    @OneToMany(mappedBy = "client")
+//    relación uno a muchos con reservation
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Reservation> reservations;
+    private Set<Reservation> reservations = new HashSet<>();
 
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
     @JsonIgnore
