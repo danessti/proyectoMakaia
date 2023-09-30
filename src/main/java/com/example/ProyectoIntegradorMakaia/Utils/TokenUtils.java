@@ -32,7 +32,7 @@ public class TokenUtils {
     }
 
     public  static UsernamePasswordAuthenticationToken getAuthentication(String token){
-        try{
+        try {
             Claims claims=Jwts.parser()
                     .setSigningKey(ACCESS_TOKEN_SECRET.getBytes())
                     .parseClaimsJws(token)
