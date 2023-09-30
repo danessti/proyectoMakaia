@@ -1,6 +1,6 @@
 //package com.example.ProyectoIntegradorMakaia.Security;
 //
-//import com.example.ProyectoIntegradorMakaia.Models.User;
+//import com.example.ProyectoIntegradorMakaia.Models.user.User;
 //import org.springframework.security.core.GrantedAuthority;
 //import org.springframework.security.core.userdetails.UserDetails;
 //

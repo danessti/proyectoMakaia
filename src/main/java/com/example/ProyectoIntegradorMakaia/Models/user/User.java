@@ -1,5 +1,6 @@
-package com.example.ProyectoIntegradorMakaia.Models;
+package com.example.ProyectoIntegradorMakaia.Models.user;
 
+import com.example.ProyectoIntegradorMakaia.Models.Authority;
 import lombok.Data;
 
 import javax.persistence.*;

@@ -1,9 +1,9 @@
 //package com.example.ProyectoIntegradorMakaia.Utils;
 //
 //import com.example.ProyectoIntegradorMakaia.Models.Authority;
-//import com.example.ProyectoIntegradorMakaia.Models.User;
+//import com.example.ProyectoIntegradorMakaia.Models.user.User;
 //import com.example.ProyectoIntegradorMakaia.Repositories.AuthorityRepository;
-//import com.example.ProyectoIntegradorMakaia.Repositories.UserRepository;
+//import com.example.ProyectoIntegradorMakaia.Models.user.UserRepository;
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 //import org.springframework.stereotype.Component;

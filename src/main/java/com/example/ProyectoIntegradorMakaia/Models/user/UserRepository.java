@@ -1,6 +1,6 @@
-package com.example.ProyectoIntegradorMakaia.Repositories;
+package com.example.ProyectoIntegradorMakaia.Models.user;
 
-import com.example.ProyectoIntegradorMakaia.Models.User;
+import com.example.ProyectoIntegradorMakaia.Models.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
