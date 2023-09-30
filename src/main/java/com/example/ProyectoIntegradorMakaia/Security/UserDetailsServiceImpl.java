@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Optional;
 
-public class UsuarioDetailsServiceImpl  implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserClientRepository userClientRepository;
@@ -19,18 +19,16 @@ public class UsuarioDetailsServiceImpl  implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<UserClient> userOptional= userClientRepository
                 .findByUsernameOrEmail(username, username);
-        if (!userOptional.isPresent()) {
+        if (userOptional.isEmpty()) {
             throw new UsernameNotFoundException("El usuario con el nombre de usuario/correo electrónico " + username + " no existe");
         }
 
         UserClient userClient = userOptional.get();
 
-        UserDetails userDetails = User.builder()
+        return User.builder()
                 .username(userClient.getUsername())
                 .password(userClient.getPassword())
                 .roles(RoleName.ROLE_USER.name())
                 .build();
-
-        return userDetails;
     }
 }

@@ -1,7 +1,6 @@
 package com.example.ProyectoIntegradorMakaia.Security;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 @AllArgsConstructor
-public class UsuarioDetailsImpl implements UserDetails {
+public class UserDetailsImpl implements UserDetails {
 
     private final User user;
 

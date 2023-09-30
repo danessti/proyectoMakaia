@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @AllArgsConstructor
 @RequestMapping("/v1/public")
 @RestController
@@ -22,4 +21,5 @@ public class PublicController {
 
     @Autowired
     private final ReservationService reservationService;
+
 }
