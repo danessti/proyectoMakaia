@@ -1,19 +1,17 @@
 package com.example.ProyectoIntegradorMakaia.Models;
 
 import com.example.ProyectoIntegradorMakaia.Utils.AuthorityName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
-@Entity(name = "authorities")
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name = "authority")
 public class Authority {
-
-    public Authority(AuthorityName authorityName) {
-        this. name = authorityName;
-    }
-
-    public Authority() {}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

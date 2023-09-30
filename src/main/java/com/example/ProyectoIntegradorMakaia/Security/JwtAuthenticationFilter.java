@@ -22,7 +22,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         try{
             authCredentials= new ObjectMapper().readValue(request.getReader(), AuthCredentials.class);
-        }catch (IOException e){
+        } catch (IOException e){
 
         }
         UsernamePasswordAuthenticationToken usernamePAT= new UsernamePasswordAuthenticationToken(
@@ -31,9 +31,9 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 Collections.emptyList()
 
         );
+
         return getAuthenticationManager().authenticate(usernamePAT);
     }
-
 
     protected void succesfulAuthentication(HttpServletRequest request,
                                            HttpServletResponse response,
