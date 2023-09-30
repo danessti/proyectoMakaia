@@ -15,6 +15,7 @@ public class TokenUtils {
 
     private final static String ACCESS_TOKEN_SECRET = "4qhq8LrEBfYcaRHxhdb9zURb2rf8e7Ud";
     private final static Long ACCESS_TOKEN_VALIDITY_SECONDS =2_592_000L;
+
     public static String createToken (String nombre, String email){
         long expirationTime = ACCESS_TOKEN_VALIDITY_SECONDS * 1000;
         Date expirationDate = new Date(System.currentTimeMillis()+expirationTime);
@@ -31,7 +32,7 @@ public class TokenUtils {
     }
 
     public  static UsernamePasswordAuthenticationToken getAuthentication(String token){
-        try{
+        try {
             Claims claims=Jwts.parser()
                     .setSigningKey(ACCESS_TOKEN_SECRET.getBytes())
                     .parseClaimsJws(token)
@@ -40,7 +41,7 @@ public class TokenUtils {
             String email = claims.getSubject();
 
             return new UsernamePasswordAuthenticationToken(email, null, Collections.emptyList());
-        }catch (JwtException e){
+        }catch (JwtException e) {
             return null;
         }
     }

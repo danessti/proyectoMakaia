@@ -33,8 +33,4 @@ public class ManageController {
     @Autowired
     private final ReservationService reservationService;
 
-
-
-
-
 }
