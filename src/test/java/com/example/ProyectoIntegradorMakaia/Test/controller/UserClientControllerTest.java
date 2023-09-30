@@ -1,7 +1,7 @@
 package com.example.ProyectoIntegradorMakaia.Test.controller;
 
 
-import com.example.ProyectoIntegradorMakaia.Models.user.UserRepository;
+import com.example.ProyectoIntegradorMakaia.Repositories.UserClientRepository;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -10,12 +10,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @TestMethodOrder(MethodOrderer.class)
 @ExtendWith(MockitoExtension.class)
-public class UserControllerTest {
+public class UserClientControllerTest {
 
     @Mock
-    private UserRepository userService;
+    private UserClientRepository userService;
 
     @InjectMocks
-    private UserRepository userController;
+    private UserClientRepository userController;
 
 }

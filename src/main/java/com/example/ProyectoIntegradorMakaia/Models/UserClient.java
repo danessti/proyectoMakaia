@@ -1,6 +1,5 @@
-package com.example.ProyectoIntegradorMakaia.Models.user;
+package com.example.ProyectoIntegradorMakaia.Models;
 
-import com.example.ProyectoIntegradorMakaia.Models.Authority;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity(name = "users")
-public class User {
+public class UserClient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +16,9 @@ public class User {
     private String username;
     private String password;
 
-    public User() {}
+    public UserClient() {}
 
-    public User(String username, String password, String email, List<Authority> authorities) {
+    public UserClient(String username, String password, String email, List<Authority> authorities) {
         this.username = username;
         this.email = email;
         this.password = password;
