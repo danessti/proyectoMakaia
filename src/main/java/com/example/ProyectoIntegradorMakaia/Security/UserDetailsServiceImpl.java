@@ -15,10 +15,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserClientRepository userClientRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<UserClient> userOptional= userClientRepository
                 .findByUsernameOrEmail(username, username);
+
         if (userOptional.isEmpty()) {
             throw new UsernameNotFoundException("El usuario con el nombre de usuario/correo electrónico " + username + " no existe");
         }
