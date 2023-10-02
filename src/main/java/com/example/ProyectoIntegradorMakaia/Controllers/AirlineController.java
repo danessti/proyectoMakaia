@@ -9,14 +9,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/v1/airlines")
 public class AirlineController {
 
     @Autowired
     private final AirlineService airlineService;
+
+    @Autowired
+    public AirlineController(AirlineService airlineService) {
+        this.airlineService = Objects.requireNonNull(airlineService, "airlineService must not be null");
+    }
 
     @GetMapping
     public ResponseEntity<List<Airline>> getAllAirlines() {

@@ -24,10 +24,14 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain (HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                        .antMatchers("/v1/**").permitAll()
+                        .antMatchers("/").hasRole("ADMIN")
+                        .antMatchers("/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin(Customizer.withDefaults());
+                .formLogin(Customizer.withDefaults())
+                .csrf().disable()
+                .sessionManagement()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         return httpSecurity.build();
     }
