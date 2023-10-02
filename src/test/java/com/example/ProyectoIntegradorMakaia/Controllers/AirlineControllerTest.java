@@ -32,19 +32,16 @@ class AirlineControllerTest {
 
     @Test
     void getAllAirlines() throws Exception {
-
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/airlines")
                         .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers
-                        .content()
+                .andExpect(MockMvcResultMatchers.content()
                         .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
 
     @Test
     void createAirline() throws Exception {
-
         Airline airline = new Airline();
 
         LocalDate localDate = LocalDate.of(1990, 1, 1);
@@ -75,7 +72,6 @@ class AirlineControllerTest {
 
     @Test
     void getAirlineById() throws Exception {
-
         long idAirline = 1L;
         Airline airline = new Airline();
         airline.setIdAirline(idAirline);
@@ -89,7 +85,6 @@ class AirlineControllerTest {
 
     @Test
     void updateAirline() throws Exception {
-
 //        datos de ejemplo para la aerolínea a actualizar
         Long idAirline = 1L;
 
@@ -115,7 +110,6 @@ class AirlineControllerTest {
 
     @Test
     void deleteAirline() throws Exception {
-
         long idAirline = 1L;
 
         Mockito.doNothing().when(airlineService).deleteAirline(idAirline);

@@ -33,7 +33,6 @@ class AirplaneControllerTest {
 
     @Test
     void getAllAirplanes() throws Exception {
-
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/airplanes")
                         .with(SecurityMockMvcRequestPostProcessors.user("admin").password("ad123"))
                 .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
@@ -43,7 +42,6 @@ class AirplaneControllerTest {
 
     @Test
     void createAirplane() throws Exception {
-
         Airline airline = new Airline();
 
         LocalDate localDate = LocalDate.of(1990, 1, 1);
@@ -85,21 +83,19 @@ class AirplaneControllerTest {
 
     @Test
     void getAirplaneById() throws Exception {
-
         long id = 1L;
         Airplane airplane = new Airplane();
         airplane.setId_airplane(id);
 
         Mockito.when(airplaneService.getAirplaneById(id)).thenReturn(airplane);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/v1/airplanes", airplane)
+        mockMvc.perform(MockMvcRequestBuilders.get("/v1/airplanes/{id}", airplane)
                         .with(SecurityMockMvcRequestPostProcessors.httpBasic("admin", "ad123")))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
     void updateAirplane() throws Exception {
-
         Long id = 1L;
         Airline airline = new Airline();
 
@@ -135,7 +131,6 @@ class AirplaneControllerTest {
 
     @Test
     void deleteAirplane() throws Exception {
-
         long id = 1L;
         Airplane airplane = new Airplane();
         airplane.setId_airplane(id);
