@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/airplanes")
+@RequestMapping("/v1/airplanes")
 public class AirplaneController {
 
     private final AirplaneService airplaneService;

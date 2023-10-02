@@ -10,17 +10,28 @@
 			"name": "obtener aeropuertos",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": {
+						"username": "admin",
+						"password": "ad123"
+					}
 				},
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/airports"
+				"url": "localhost:8080/v1/airports"
 			},
 			"response": []
 		},
 		{
 			"name": "crear aeropuerto",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -32,7 +43,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports"
+				"url": "localhost:8080/v1/airports"
 			},
 			"response": []
 		},
@@ -50,7 +61,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports"
+				"url": "localhost:8080/v1/airports"
 			},
 			"response": []
 		},
@@ -71,7 +82,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/1"
+				"url": "localhost:8080/v1/airports/1"
 			},
 			"response": []
 		},
@@ -92,7 +103,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/2"
+				"url": "localhost:8080/v1/airports/2"
 			},
 			"response": []
 		},
@@ -110,7 +121,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/1"
+				"url": "localhost:8080/v1/airports/1"
 			},
 			"response": []
 		},
@@ -128,7 +139,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/2"
+				"url": "localhost:8080/v1/airports/2"
 			},
 			"response": []
 		},
@@ -137,7 +148,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airports/1"
+				"url": "localhost:8080/v1/airports/1"
 			},
 			"response": []
 		},
@@ -146,13 +157,20 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airports/2"
+				"url": "localhost:8080/v1/airports/2"
 			},
 			"response": []
 		},
 		{
 			"name": "obtener aerolineas",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"url": "localhost:8080/v1/airlines"
@@ -297,7 +315,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/airplanes"
+				"url": "localhost:8080/v1/airplanes"
 			},
 			"response": []
 		},
@@ -315,7 +333,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes"
+				"url": "localhost:8080/v1/airplanes"
 			},
 			"response": []
 		},
@@ -333,7 +351,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes"
+				"url": "localhost:8080/v1/airplanes"
 			},
 			"response": []
 		},
@@ -361,7 +379,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/1"
+				"url": "localhost:8080/v1/airplanes/1"
 			},
 			"response": []
 		},
@@ -389,32 +407,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/2"
-			},
-			"response": []
-		},
-		{
-			"name": "actualizar avion 2",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"password": "admin123",
-						"username": "admin"
-					}
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1.0\",\r\n    \"passengerCapacity\": 50,\r\n    \"yearProduction\": \"1999-10-11\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/airplanes/2"
+				"url": "localhost:8080/v1/airplanes/2"
 			},
 			"response": []
 		},
@@ -439,7 +432,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/1"
+				"url": "localhost:8080/v1/airplanes/1"
 			},
 			"response": []
 		},
@@ -457,7 +450,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/2"
+				"url": "localhost:8080/v1/airplanes/2"
 			},
 			"response": []
 		},
@@ -466,7 +459,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airplanes/1"
+				"url": "localhost:8080/v1/airplanes/1"
 			},
 			"response": []
 		},
@@ -475,7 +468,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airplanes/2"
+				"url": "localhost:8080/v1/airplanes/2"
 			},
 			"response": []
 		},

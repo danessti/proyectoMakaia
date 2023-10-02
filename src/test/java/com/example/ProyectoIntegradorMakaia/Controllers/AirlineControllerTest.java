@@ -14,7 +14,6 @@ import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequ
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -24,9 +23,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 class AirlineControllerTest {
-
-    @Autowired
-    private WebApplicationContext webApplicationContext;
 
     @Autowired
     private MockMvc mockMvc;
