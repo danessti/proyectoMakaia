@@ -2,6 +2,7 @@ package com.example.ProyectoIntegradorMakaia.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -9,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,9 +25,10 @@ public class WebSecurityConfig {
         httpSecurity
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .antMatchers("/").hasRole("ADMIN")
-                        .antMatchers("/**").permitAll()
-                        .anyRequest().authenticated()
-                )
+                        .antMatchers(HttpMethod.GET).hasAuthority("READ")
+                        .antMatchers(HttpMethod.POST).hasAuthority("WRITE")
+                        .antMatchers(HttpMethod.PUT).hasAuthority("WRITE")
+                        .antMatchers(HttpMethod.DELETE).hasAuthority("WRITE"))
                 .formLogin(Customizer.withDefaults())
                 .csrf().disable()
                 .sessionManagement()
@@ -38,12 +39,17 @@ public class WebSecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withUsername("admin")
-                .password(passwordEncoder().encode("ad123"))
-                .roles("ADMIN")
-                .build();
+        return new InMemoryUserDetailsManager(
+                User.withUsername("admin")
+                        .password(passwordEncoder().encode("ad123"))
+                        .authorities("READ", "WRITE")
+                        .build(),
 
-        return new InMemoryUserDetailsManager(user);
+                User.withUsername("user")
+                        .password(passwordEncoder().encode("us123"))
+                        .authorities("READ")
+                        .build()
+        );
     }
 
     @Bean
