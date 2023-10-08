@@ -17,12 +17,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserClientRepository userClientRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
         Optional<UserClient> userOptional= userClientRepository
-                .findByUsernameOrEmail(username, username);
+                .findByUsernameOrEmail(usernameOrEmail, usernameOrEmail);
 
         if (userOptional.isEmpty()) {
-            throw new UsernameNotFoundException("El usuario con el nombre de usuario/correo electrónico " + username + " no existe");
+            throw new UsernameNotFoundException("El usuario con el nombre de usuario/correo electrónico " + usernameOrEmail + " no existe");
         }
 
         UserClient userClient = userOptional.get();
@@ -30,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return User.builder()
                 .username(userClient.getUsername())
                 .password(userClient.getPassword())
-                .roles(RoleName.ROLE_USER.name())
+                .roles(RoleName.ROLE_ADMIN.name())
                 .build();
     }
 }

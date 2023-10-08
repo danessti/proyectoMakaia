@@ -1,5 +1,7 @@
-package com.example.ProyectoIntegradorMakaia.Security;
+package com.example.ProyectoIntegradorMakaia.Security.jwt;
 
+import com.example.ProyectoIntegradorMakaia.Security.auth.AuthCredentials;
+import com.example.ProyectoIntegradorMakaia.Security.UserDetailsImpl;
 import com.example.ProyectoIntegradorMakaia.Utils.TokenUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

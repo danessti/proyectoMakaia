@@ -1,13 +1,18 @@
 package com.example.ProyectoIntegradorMakaia.Models;
 
+import com.example.ProyectoIntegradorMakaia.Utils.RoleName;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Builder
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "users")
 public class UserClient {
 
@@ -23,5 +28,9 @@ public class UserClient {
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
     List<Authority> authorities;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Roles roles;
 
 }

@@ -1,9 +1,12 @@
 package com.example.ProyectoIntegradorMakaia.Models;
 
+import com.example.ProyectoIntegradorMakaia.Utils.RoleName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +17,11 @@ public class Roles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "rol_name", nullable = false)
-    private String nameRol;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role_name", nullable = false)
+    private RoleName roleName;
+
+    @OneToMany(mappedBy = "roles", cascade = CascadeType.ALL)
+    private List<UserClient> userClients =new ArrayList<>();
 
 }

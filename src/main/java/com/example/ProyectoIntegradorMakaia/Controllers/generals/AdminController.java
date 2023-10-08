@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
-@RequestMapping("/v1/manage")
+@RequestMapping("/v1/admin")
 @RestController
-public class ManageController {
+public class AdminController {
 
     @Autowired
     private final AirlineService airlineService;

@@ -1,5 +1,5 @@
 package com.example.ProyectoIntegradorMakaia.Utils;
 
 public enum RoleName {
-    ROLE_ADMIN, ROLE_MANAGE, ROLE_USER
+    ROLE_ADMIN, ROLE_USER
 }
