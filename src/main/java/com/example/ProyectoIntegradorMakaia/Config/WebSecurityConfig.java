@@ -25,7 +25,23 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableConfigurationProperties
 public class WebSecurityConfig {
 
+<<<<<<< HEAD
     private final JwtAuthorizationFilter jwtAuthorizationFilter;
+=======
+    @Bean
+    public SecurityFilterChain filterChain (HttpSecurity httpSecurity) throws Exception {
+        httpSecurity
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                        .antMatchers("/").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.GET).hasAuthority("READ")
+                        .antMatchers(HttpMethod.POST).hasAuthority("WRITE")
+                        .antMatchers(HttpMethod.PUT).hasAuthority("WRITE")
+                        .antMatchers(HttpMethod.DELETE).hasAuthority("WRITE"))
+                .formLogin(Customizer.withDefaults())
+                .csrf().disable()
+                .sessionManagement()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+>>>>>>> 0f9cffb1ca01eba450b247dbe8786cc400795cc9
 
     public WebSecurityConfig(JwtAuthorizationFilter jwtAuthorizationFilter) {
         this.jwtAuthorizationFilter = jwtAuthorizationFilter;
@@ -64,6 +80,7 @@ public class WebSecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
+<<<<<<< HEAD
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
 
         manager.createUser(User.withUsername("adminn")
@@ -73,6 +90,19 @@ public class WebSecurityConfig {
         );
 
         return manager;
+=======
+        return new InMemoryUserDetailsManager(
+                User.withUsername("admin")
+                        .password(passwordEncoder().encode("ad123"))
+                        .authorities("READ", "WRITE")
+                        .build(),
+
+                User.withUsername("user")
+                        .password(passwordEncoder().encode("us123"))
+                        .authorities("READ")
+                        .build()
+        );
+>>>>>>> 0f9cffb1ca01eba450b247dbe8786cc400795cc9
     }
 
     @Bean

@@ -10,47 +10,65 @@
 			"name": "obtener aeropuertos",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": {
+						"username": "admin",
+						"password": "ad123"
+					}
 				},
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/airports"
+				"url": "localhost:8080/v1/airports"
 			},
 			"response": []
 		},
 		{
 			"name": "crear aeropuerto",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nameAirport\" : \"Aeropuerto 1\",\r\n    \"city\" : \"Ciudad 1\",\r\n    \"country\" : \"Pais 1\",\r\n    \"code\" : \"ACP123\"\r\n}",
+					"raw": "{\r\n    \"nameAirport\" : \"Aeropuerto 1\",\r\n    \"city\" : \"Ciudad 1\",\r\n    \"country\" : \"Pais 1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "localhost:8080/airports"
+				"url": "localhost:8080/v1/airports"
 			},
 			"response": []
 		},
 		{
 			"name": "crear aeropuerto 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nameAirport\" : \"Aeropuerto 2\",\r\n    \"city\" : \"ciudad\",\r\n    \"country\" : \"Colombia\",\r\n    \"code\" : \"AC123\"\r\n}",
+					"raw": "{\r\n    \"nameAirport\" : \"Aeropuerto 2\",\r\n    \"city\" : \"ciudad\",\r\n    \"country\" : \"Colombia\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "localhost:8080/airports"
+				"url": "localhost:8080/v1/airports"
 			},
 			"response": []
 		},
@@ -60,6 +78,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -71,7 +96,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/1"
+				"url": "localhost:8080/v1/airports/1"
 			},
 			"response": []
 		},
@@ -81,6 +106,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -92,25 +124,32 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/2"
+				"url": "localhost:8080/v1/airports/2"
 			},
 			"response": []
 		},
 		{
 			"name": "actualizar aeropuerto",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"nameAirport\": \"Aeropuerto 1.0\",\r\n        \"city\": \"ciudad 1.0\",\r\n        \"country\": \"Colombia 1.0\",\r\n        \"code\": \"AC123\"\r\n    }",
+					"raw": "{\r\n        \"nameAirport\": \"Aeropuerto 1.0\",\r\n        \"city\": \"ciudad 1.0\",\r\n        \"country\": \"Colombia 1.0\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "localhost:8080/airports/1"
+				"url": "localhost:8080/v1/airports/1"
 			},
 			"response": []
 		},
@@ -128,31 +167,52 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airports/2"
+				"url": "localhost:8080/v1/airports/2"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar aeropuerto",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airports/1"
+				"url": "localhost:8080/v1/airports/1"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar aeropuerto 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airports/2"
+				"url": "localhost:8080/v1/airports/2"
 			},
 			"response": []
 		},
 		{
 			"name": "obtener aerolineas",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"url": "localhost:8080/v1/airlines"
@@ -297,7 +357,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/airplanes"
+				"url": "localhost:8080/v1/airplanes"
 			},
 			"response": []
 		},
@@ -315,7 +375,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes"
+				"url": "localhost:8080/v1/airplanes"
 			},
 			"response": []
 		},
@@ -333,7 +393,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes"
+				"url": "localhost:8080/v1/airplanes"
 			},
 			"response": []
 		},
@@ -361,7 +421,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/1"
+				"url": "localhost:8080/v1/airplanes/1"
 			},
 			"response": []
 		},
@@ -389,32 +449,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/2"
-			},
-			"response": []
-		},
-		{
-			"name": "actualizar avion 2",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"password": "admin123",
-						"username": "admin"
-					}
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"airplaneModel\": \"Modelo 1.0\",\r\n    \"passengerCapacity\": 50,\r\n    \"yearProduction\": \"1999-10-11\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "localhost:8080/airplanes/2"
+				"url": "localhost:8080/v1/airplanes/2"
 			},
 			"response": []
 		},
@@ -439,7 +474,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/1"
+				"url": "localhost:8080/v1/airplanes/1"
 			},
 			"response": []
 		},
@@ -457,7 +492,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/airplanes/2"
+				"url": "localhost:8080/v1/airplanes/2"
 			},
 			"response": []
 		},
@@ -466,7 +501,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airplanes/1"
+				"url": "localhost:8080/v1/airplanes/1"
 			},
 			"response": []
 		},
@@ -475,22 +510,36 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/airplanes/2"
+				"url": "localhost:8080/v1/airplanes/2"
 			},
 			"response": []
 		},
 		{
 			"name": "obtener clientes",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/clients"
+				"url": "localhost:8080/v1/clients"
 			},
 			"response": []
 		},
 		{
 			"name": "crear cliente",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -502,13 +551,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/clients"
+				"url": "localhost:8080/v1/clients"
 			},
 			"response": []
 		},
 		{
 			"name": "crear contacto",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -520,13 +576,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/infos"
+				"url": "localhost:8080/v1/infos"
 			},
 			"response": []
 		},
 		{
 			"name": "crear cliente 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -538,13 +601,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/clients"
+				"url": "localhost:8080/v1/clients"
 			},
 			"response": []
 		},
 		{
 			"name": "crear contacto 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -556,7 +626,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/infos"
+				"url": "localhost:8080/v1/infos"
 			},
 			"response": []
 		},
@@ -566,6 +636,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -577,7 +654,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/clients/1"
+				"url": "localhost:8080/v1/clients/1"
 			},
 			"response": []
 		},
@@ -587,6 +664,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -598,7 +682,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/infos/1"
+				"url": "localhost:8080/v1/infos/1"
 			},
 			"response": []
 		},
@@ -608,6 +692,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -619,7 +710,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/infos/2"
+				"url": "localhost:8080/v1/infos/2"
 			},
 			"response": []
 		},
@@ -629,6 +720,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -640,13 +738,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/clients/2"
+				"url": "localhost:8080/v1/clients/2"
 			},
 			"response": []
 		},
 		{
 			"name": "actualizar cliente",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -658,7 +763,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/clients/1"
+				"url": "localhost:8080/v1/clients/1"
 			},
 			"response": []
 		},
@@ -676,13 +781,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/infos/1"
+				"url": "localhost:8080/v1/infos/1"
 			},
 			"response": []
 		},
 		{
 			"name": "actualizar cliente 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -694,13 +806,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/clients/2"
+				"url": "localhost:8080/v1/clients/2"
 			},
 			"response": []
 		},
 		{
 			"name": "actualizar contacto 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -712,43 +831,71 @@
 						}
 					}
 				},
-				"url": "localhost:8080/infos/2"
+				"url": "localhost:8080/v1/infos/2"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar cliente",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/clients/1"
+				"url": "localhost:8080/v1/clients/1"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar cliente 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/clients/2"
+				"url": "localhost:8080/v1/clients/2"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar info",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/infos/1"
+				"url": "localhost:8080/v1/infos/1"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar info 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/infos/2"
+				"url": "localhost:8080/v1/infos/2"
 			},
 			"response": []
 		},
@@ -896,15 +1043,29 @@
 		{
 			"name": "obtener reservas",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
-				"url": "localhost:8080/reservations"
+				"url": "localhost:8080/v1/reservations"
 			},
 			"response": []
 		},
 		{
 			"name": "crear reserva",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -916,13 +1077,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/reservations"
+				"url": "localhost:8080/v1/reservations"
 			},
 			"response": []
 		},
 		{
 			"name": "crear reserva 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -934,7 +1102,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/reservations"
+				"url": "localhost:8080/v1/reservations"
 			},
 			"response": []
 		},
@@ -944,6 +1112,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -955,7 +1130,7 @@
 						}
 					}
 				},
-				"url": "localhost:8080/reservations/1"
+				"url": "localhost:8080/v1/reservations/1"
 			},
 			"response": []
 		},
@@ -965,6 +1140,13 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -976,13 +1158,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/reservations/1"
+				"url": "localhost:8080/v1/reservations/1"
 			},
 			"response": []
 		},
 		{
 			"name": "actualizar reserva",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -994,13 +1183,20 @@
 						}
 					}
 				},
-				"url": "localhost:8080/reservations/2"
+				"url": "localhost:8080/v1/reservations/2"
 			},
 			"response": []
 		},
 		{
 			"name": "actualizar reserva 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -1012,25 +1208,39 @@
 						}
 					}
 				},
-				"url": "localhost:8080/reservations/2"
+				"url": "localhost:8080/v1/reservations/2"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar reserva",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/reservations/1"
+				"url": "localhost:8080/v1/reservations/1"
 			},
 			"response": []
 		},
 		{
 			"name": "eliminar reserva 2",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ad123",
+						"username": "admin"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
-				"url": "localhost:8080/reservations/2"
+				"url": "localhost:8080/v1/reservations/2"
 			},
 			"response": []
 		}

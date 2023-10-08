@@ -14,16 +14,15 @@ import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequ
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.context.WebApplicationContext;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 class AirlineControllerTest {
-
-    @Autowired
-    private WebApplicationContext webApplicationContext;
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,20 +32,26 @@ class AirlineControllerTest {
 
     @Test
     void getAllAirlines() throws Exception {
-
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/airlines")
                         .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers
-                        .content()
+                .andExpect(MockMvcResultMatchers.content()
                         .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
 
     @Test
     void createAirline() throws Exception {
-
         Airline airline = new Airline();
+
+        LocalDate localDate = LocalDate.of(1990, 1, 1);
+        Date date = java.sql.Date.valueOf(localDate);
+
+        airline.setIdAirline(1L);
+        airline.setName("Avianca");
+        airline.setFoundedDate(date);
+        airline.setWebsite("web.com");
+        airline.setDescription("Descripción de la aerolínea");
 
         Mockito.when(airlineService.createAirline(Mockito.any(Airline.class))).thenReturn(airline);
 
@@ -55,7 +60,6 @@ class AirlineControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(airline))) // Convierte el objeto Airline a JSON
                 .andExpect(MockMvcResultMatchers.status().isCreated()); // verifica que se devuelva un código de estado '201 CREATED'
-
     }
 
     private String asJsonString(final Object obj) {
@@ -68,7 +72,6 @@ class AirlineControllerTest {
 
     @Test
     void getAirlineById() throws Exception {
-
         long idAirline = 1L;
         Airline airline = new Airline();
         airline.setIdAirline(idAirline);
@@ -81,11 +84,39 @@ class AirlineControllerTest {
     }
 
     @Test
-    void updateAirline() {
+    void updateAirline() throws Exception {
+//        datos de ejemplo para la aerolínea a actualizar
+        Long idAirline = 1L;
+
+        Airline updateAirline = new Airline();
+
+        LocalDate localDate = LocalDate.of(1990, 1, 1);
+        Date date = java.sql.Date.valueOf(localDate);
+
+        updateAirline.setIdAirline(idAirline);
+        updateAirline.setName("Avianca");
+        updateAirline.setFoundedDate(date);
+        updateAirline.setWebsite("web.com");
+        updateAirline.setDescription("Descripción de la aerolínea");
+
+        Mockito.when(airlineService.updateAirline(idAirline, updateAirline)).thenReturn(updateAirline);
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/v1/airlines/{id}", idAirline)
+                        .with(SecurityMockMvcRequestPostProcessors.httpBasic("admin", "ad123"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(updateAirline)))
+                .andExpect(status().isOk());
     }
 
     @Test
-    void deleteAirline() {
+    void deleteAirline() throws Exception {
+        long idAirline = 1L;
+
+        Mockito.doNothing().when(airlineService).deleteAirline(idAirline);
+
+        mockMvc.perform(MockMvcRequestBuilders.delete("/v1/airlines/{id}", idAirline)
+                        .with(SecurityMockMvcRequestPostProcessors.httpBasic("admin", "ad123")))
+                .andExpect(MockMvcResultMatchers.status().isNoContent());
     }
 
 }
