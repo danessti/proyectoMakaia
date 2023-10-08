@@ -94,7 +94,7 @@ public class AirlineController {
     }
 
     @PreAuthorize("hasRole('WRITE')")
-    @ApiOperation(value = "Update an Airline by Id", notes = "Update an existing airline in the database by its unique Id.")
+    @ApiOperation(value = "Update an Airline by Id", notes = "Update an existing Airline in the database by its unique Id.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Aerolínea actualizada correctamente."),
            @ApiResponse(code = 400, message = "Solicitud incorrecta, contiene datos incorrectos o invalidos que impiden " +
@@ -114,7 +114,7 @@ public class AirlineController {
     }
 
     @PreAuthorize("hasRole('WRITE')")
-    @ApiOperation(value = "Delete an Airline by Id", notes = "Delete an existing airline in the database by its unique Id.")
+    @ApiOperation(value = "Delete an Airline by Id", notes = "Delete an existing Airline in the database by its unique Id.")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "El recurso se eliminó con éxito."),
             @ApiResponse(code = 404, message = "El recurso con el Id especificado no fue encontrado en la base de datos.")
