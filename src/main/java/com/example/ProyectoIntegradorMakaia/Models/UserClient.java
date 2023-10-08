@@ -1,6 +1,5 @@
 package com.example.ProyectoIntegradorMakaia.Models;
 
-import com.example.ProyectoIntegradorMakaia.Utils.RoleName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

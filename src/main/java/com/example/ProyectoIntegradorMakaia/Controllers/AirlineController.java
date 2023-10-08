@@ -28,9 +28,20 @@ public class AirlineController {
         this.airlineService = Objects.requireNonNull(airlineService, "airlineService must not be null");
     }
 
+    @PreAuthorize("hasAnyRole('READ', 'WRITE')")
+    @ApiOperation(value = "Get all Airlines", notes = "Retrieve the list of all airlines.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Aerolíneas recuperadas exitosamente."),
+            @ApiResponse(code = 404, message = "No se encontraron aerolíneas.")
+    })
     @GetMapping
     public ResponseEntity<List<Airline>> getAllAirlines() {
         List<Airline> airlines = airlineService.getAllAirlines();
+
+        if (airlines.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity<>(airlines, HttpStatus.OK);
     }
 

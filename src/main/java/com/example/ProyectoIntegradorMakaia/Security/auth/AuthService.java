@@ -7,12 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
 public class AuthService {
-
 
     private final UserClientRepository userClientRepository;
 
@@ -26,9 +23,11 @@ public class AuthService {
                 .authorities(request.getAuthorities())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
+
         userClientRepository.save(user);
 
         String token = TokenUtils.createToken(request.getUsername(),request.getEmail());
+
         return AuthResponse.builder()
                 .token(token)
                 .email(request.getEmail())
@@ -37,15 +36,16 @@ public class AuthService {
     }
 
     public AuthResponse login(AuthCredentials request) {
-
         String usernameOrEmail;
-        if (request.getUsername()!=null){ usernameOrEmail = request.getUsername();}
-        else {
-       usernameOrEmail = request.getEmail();
+
+        if (request.getUsername()!=null) {
+            usernameOrEmail = request.getUsername();
+        } else {
+            usernameOrEmail = request.getEmail();
         }
+
         UserClient user = userClientRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new RuntimeException("Contraseña incorrecta");
@@ -59,7 +59,5 @@ public class AuthService {
                 .username(request.getUsername())
                 .build();
     }
-
-
 
 }

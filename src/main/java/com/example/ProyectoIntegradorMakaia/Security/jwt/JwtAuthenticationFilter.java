@@ -24,14 +24,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         try{
             authCredentials= new ObjectMapper().readValue(request.getReader(), AuthCredentials.class);
-        } catch (IOException e){
+        } catch (IOException e) {}
 
-        }
-        UsernamePasswordAuthenticationToken usernamePAT= new UsernamePasswordAuthenticationToken(
+        UsernamePasswordAuthenticationToken usernamePAT = new UsernamePasswordAuthenticationToken(
                 authCredentials.getUsername(),
                 authCredentials.getPassword(),
                 Collections.emptyList()
-
         );
 
         return getAuthenticationManager().authenticate(usernamePAT);
@@ -42,6 +40,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                            FilterChain chain,
                                            Authentication authResult) throws IOException, ServletException {
         UserDetailsImpl userDetails= (UserDetailsImpl) authResult.getPrincipal();
+
         String token = TokenUtils. createToken(userDetails.getUsername(),userDetails.getUsername());
 
         response.addHeader("Authorization", "Bearer" + token);
@@ -49,7 +48,6 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         response.getWriter().flush();
 
         super.successfulAuthentication(request,response,chain, authResult);
-
     }
 
 }

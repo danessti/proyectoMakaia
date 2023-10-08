@@ -30,7 +30,7 @@ public class SwaggerConfig {
                         "realizar reservas, gestionar usuarios y cooperar con sistemas de aerolíneas.")
                 .version("1.0.0")
                 .contact(new Contact("Daniel Espinosa", "https://www.linkedin.com/in/danessti/", "danessti@gmail.com"))
-                .contact(new Contact("Jorge Gomez", "pendiente", "pendiente"))
+                .contact(new Contact("Jorge Gomez", "https://www.linkedin.com/in/jorge-enrique-g%C3%B3mez-buitrago-31b083278/", "jorgegomez98125@gmail.com"))
                 .build();
     }
 
