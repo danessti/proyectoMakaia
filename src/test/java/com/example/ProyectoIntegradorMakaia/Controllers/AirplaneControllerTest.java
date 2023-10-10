@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -23,6 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 class AirplaneControllerTest {
 
     @Autowired
@@ -89,7 +91,7 @@ class AirplaneControllerTest {
 
         Mockito.when(airplaneService.getAirplaneById(id)).thenReturn(airplane);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/v1/airplanes/{id}", airplane)
+        mockMvc.perform(MockMvcRequestBuilders.get("/v1/airplanes/{id}", id)
                         .with(SecurityMockMvcRequestPostProcessors.httpBasic("admin", "ad123")))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }

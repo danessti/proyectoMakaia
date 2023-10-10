@@ -1,5 +1,6 @@
 package com.example.ProyectoIntegradorMakaia.Security.auth;
 
+import com.example.ProyectoIntegradorMakaia.Utils.RoleName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,5 +17,5 @@ public class AuthResponse {
     private String token;
     private String username;
     private String email;
-    private List<String> roles;
+    private RoleName roles;
 }

@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Optional;
 
+
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -30,7 +31,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return User.builder()
                 .username(userClient.getUsername())
                 .password(userClient.getPassword())
-                .roles(RoleName.ROLE_ADMIN.name())
+                .roles(userClient.getRoleName().name())
                 .build();
     }
 }

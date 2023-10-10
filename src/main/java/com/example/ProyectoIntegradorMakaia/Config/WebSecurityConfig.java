@@ -1,12 +1,17 @@
 package com.example.ProyectoIntegradorMakaia.Config;
 
+import com.example.ProyectoIntegradorMakaia.Security.UserDetailsServiceImpl;
 import com.example.ProyectoIntegradorMakaia.Security.jwt.JwtAuthenticationFilter;
 import com.example.ProyectoIntegradorMakaia.Security.jwt.JwtAuthorizationFilter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,13 +28,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableConfigurationProperties
+@RequiredArgsConstructor
+@Profile("!test")
 public class WebSecurityConfig {
 
     private final JwtAuthorizationFilter jwtAuthorizationFilter;
 
-    public WebSecurityConfig(JwtAuthorizationFilter jwtAuthorizationFilter) {
-        this.jwtAuthorizationFilter = jwtAuthorizationFilter;
-    }
+
+
+
 
 
     @Bean
@@ -44,35 +51,27 @@ public class WebSecurityConfig {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/auth/**").permitAll()
-                .antMatchers("/v1/airlines").permitAll()
-                .antMatchers("/swagger-ui/**").permitAll()
-                .antMatchers("/**").authenticated()
+                .antMatchers("/v2/api-docs", "/configuration/ui",
+                        "/swagger-resources/**", "/configuration/security",
+                        "/swagger-ui.html", "/webjars/**", "/swagger-ui/**").permitAll()
                 .antMatchers("/v1/public").hasRole("USER")
                 .antMatchers("/v1/admin").hasRole("ADMIN")
-                .antMatchers(HttpMethod.GET).hasAuthority("READ")
+                /*.antMatchers(HttpMethod.GET).hasAuthority("READ")
                 .antMatchers(HttpMethod.POST).hasAuthority("WRITE")
-                .antMatchers(HttpMethod.DELETE).hasAuthority("DELETE")
-                .anyRequest()
-                .authenticated()
+                .antMatchers(HttpMethod.DELETE).hasAuthority("DELETE")*/
+                .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
+                .addFilter(jwtAuthenticationFilter)
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-
-        manager.createUser(User.withUsername("adminn")
-                .password(passwordEncoder().encode("1234"))
-                .roles()
-                .build()
-        );
-
-        return manager;
+        return new UserDetailsServiceImpl();
     }
 
     @Bean
@@ -88,6 +87,15 @@ public class WebSecurityConfig {
                 .passwordEncoder(passwordEncoder())
                 .and()
                 .build();
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider()
+    {
+        DaoAuthenticationProvider authenticationProvider= new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
     }
 
 }

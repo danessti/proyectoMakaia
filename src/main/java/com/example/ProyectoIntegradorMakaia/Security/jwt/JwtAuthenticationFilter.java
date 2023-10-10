@@ -37,14 +37,14 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         return getAuthenticationManager().authenticate(usernamePAT);
     }
 
-    protected void succesfulAuthentication(HttpServletRequest request,
+    protected void successfulAuthentication(HttpServletRequest request,
                                            HttpServletResponse response,
                                            FilterChain chain,
                                            Authentication authResult) throws IOException, ServletException {
         UserDetailsImpl userDetails= (UserDetailsImpl) authResult.getPrincipal();
         String token = TokenUtils. createToken(userDetails.getUsername(),userDetails.getUsername());
 
-        response.addHeader("Authorization", "Bearer" + token);
+        response.addHeader("Authorization", "Bearer " + token);
 
         response.getWriter().flush();
 
