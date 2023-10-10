@@ -20,6 +20,7 @@ public class FlightService {
     @Autowired
     private final AirlineRepository airlineRepository;
 
+    @Autowired
     private final AirplaneRepository airplaneRepository;
 
     @Autowired

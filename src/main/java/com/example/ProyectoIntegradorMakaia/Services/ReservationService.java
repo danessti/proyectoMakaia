@@ -54,6 +54,7 @@ public class ReservationService {
 
         int capacity = flight.getAirplane().getPassengerCapacity();
         int reservationsCount = flight.getReservations().size();
+
         return reservationsCount >= capacity;
     }
 

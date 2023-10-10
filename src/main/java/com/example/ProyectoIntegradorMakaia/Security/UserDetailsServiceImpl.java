@@ -34,4 +34,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .roles(userClient.getRoleName().name())
                 .build();
     }
+
 }

@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/airplanes")
-@Api(tags = "Airplane", description = "Airplane Controller")
+@Api(tags = "Airplanes", description = "Airplane Controller")
 public class AirplaneController {
 
     private final AirplaneService airplaneService;
@@ -26,9 +26,20 @@ public class AirplaneController {
         this.airplaneService = airplaneService;
     }
 
+    @PreAuthorize("hasAnyRole('READ', 'WRITE')")
+    @ApiOperation(value = "Get all Airplanes", notes = "Retrieve the list of all airplanes.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Aviones recuperados exitosamente."),
+            @ApiResponse(code = 404, message = "No se encontraron aviones.")
+    })
     @GetMapping
     public ResponseEntity<List<Airplane>> getAllAirplanes() {
         List<Airplane> airplanes = airplaneService.getAllAirplanes();
+
+        if (airplanes.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity<>(airplanes, HttpStatus.OK);
     }
 
@@ -46,7 +57,6 @@ public class AirplaneController {
             @ApiResponse(code = 422, message = "no se puede procesar la solicitud debido a problemas en los datos " +
                     "proporcionados en el cuerpo de la solicitud."),
             @ApiResponse(code = 429, message = "Ha excedido la tasa de solicitudes permitidas."),
-//            el error 500 puede ser de lógica del servidor o problemas en la base de datos
             @ApiResponse(code = 500, message = "Error inesperado del sistema."),
             @ApiResponse(code = 503, message = "El servidor no puede manejar la solicitud en este momento debido a una sobrecarga " +
                     "o mantenimiento. Intenté de nuevo más tarde!")
