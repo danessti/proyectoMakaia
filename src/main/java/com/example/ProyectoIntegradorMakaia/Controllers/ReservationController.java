@@ -31,11 +31,6 @@ public class ReservationController {
     @GetMapping
     public ResponseEntity<List<Reservation>> getAllReservations() {
         List<Reservation> reservations = service.getAllReservations();
-
-        if (reservations.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 

@@ -36,7 +36,7 @@ class ClientControllerTest {
     @Test
     void getAllClients() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/clients")
-                        .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
+                        .with(SecurityMockMvcRequestPostProcessors.user("admin").password("ad123"))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content()

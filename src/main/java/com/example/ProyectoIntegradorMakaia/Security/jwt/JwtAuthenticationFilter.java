@@ -23,7 +23,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         AuthCredentials authCredentials = new AuthCredentials();
 
         try{
-            authCredentials= new ObjectMapper().readValue(request.getReader(), AuthCredentials.class);
+            authCredentials = new ObjectMapper().readValue(request.getReader(), AuthCredentials.class);
         } catch (IOException e) {}
 
         UsernamePasswordAuthenticationToken usernamePAT = new UsernamePasswordAuthenticationToken(
@@ -44,7 +44,6 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         String token = TokenUtils. createToken(userDetails.getUsername(),userDetails.getUsername());
 
         response.addHeader("Authorization", "Bearer " + token);
-
         response.getWriter().flush();
 
         super.successfulAuthentication(request,response,chain, authResult);

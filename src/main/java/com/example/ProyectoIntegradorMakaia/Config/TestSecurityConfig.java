@@ -1,4 +1,3 @@
-
 package com.example.ProyectoIntegradorMakaia.Config;
 
 import org.springframework.context.annotation.Bean;
@@ -25,6 +24,7 @@ public class TestSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable();
     }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
@@ -32,6 +32,7 @@ public class TestSecurityConfig extends WebSecurityConfigurerAdapter {
                 .password("ad123")
                 .roles("ADMIN");
     }
+
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -44,4 +45,3 @@ public class TestSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
-

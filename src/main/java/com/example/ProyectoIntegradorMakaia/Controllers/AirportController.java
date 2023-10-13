@@ -36,11 +36,6 @@ public class AirportController {
     @GetMapping
     public ResponseEntity<List<Airport>> getAllAirports() {
         List<Airport> airports = airportService.getAllAirports();
-
-        if (airports.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
         return new ResponseEntity<>(airports, HttpStatus.OK);
     }
 

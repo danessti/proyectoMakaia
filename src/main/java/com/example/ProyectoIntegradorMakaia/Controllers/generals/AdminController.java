@@ -1,6 +1,5 @@
 package com.example.ProyectoIntegradorMakaia.Controllers.generals;
 
-
 import com.example.ProyectoIntegradorMakaia.Entities.*;
 import com.example.ProyectoIntegradorMakaia.Services.*;
 import lombok.AllArgsConstructor;

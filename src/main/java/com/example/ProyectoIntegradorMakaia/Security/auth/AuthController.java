@@ -21,12 +21,12 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> loginUser (@RequestBody AuthCredentials request){
+    public ResponseEntity<AuthResponse> loginUser (@RequestBody AuthCredentials request) {
         return ResponseEntity.ok(authService.login(request));
     }
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> resgisterUser(@RequestBody AuthCredentials request){
+    public ResponseEntity<AuthResponse> resgisterUser(@RequestBody AuthCredentials request) {
         return ResponseEntity.ok(authService.register(request));
     }
 

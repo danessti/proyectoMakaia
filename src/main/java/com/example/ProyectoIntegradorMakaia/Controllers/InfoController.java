@@ -88,7 +88,7 @@ public class InfoController {
             @ApiResponse(code = 404, message = "El servidor no ha encontrado el recurso solicitado por el usuario.")
     })
     @PutMapping("/{id}")
-    public ResponseEntity<InfoContact> updateInfoContac(@PathVariable Long id, @RequestBody InfoContact updateInfoContact) {
+    public ResponseEntity<InfoContact> updateInfoContact(@PathVariable Long id, @RequestBody InfoContact updateInfoContact) {
         InfoContact infoContact = infoService.updateInfo(id, updateInfoContact);
 
         if (infoContact != null){

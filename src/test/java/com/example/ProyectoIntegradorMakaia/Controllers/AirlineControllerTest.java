@@ -35,7 +35,7 @@ class AirlineControllerTest {
     @Test
     void getAllAirlines() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/airlines")
-                        .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
+                        .with(SecurityMockMvcRequestPostProcessors.user("admin").password("ad123"))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content()

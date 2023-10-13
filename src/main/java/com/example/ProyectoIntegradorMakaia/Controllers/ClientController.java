@@ -35,11 +35,6 @@ public class ClientController {
     @GetMapping
     public ResponseEntity<List<Client>> getAllClients() {
         List<Client> clients = clientService.getAllClients();
-
-        if (clients.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
         return new ResponseEntity<>(clients, HttpStatus.OK);
     }
 

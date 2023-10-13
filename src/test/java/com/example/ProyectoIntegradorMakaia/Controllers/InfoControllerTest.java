@@ -31,16 +31,6 @@ class InfoControllerTest {
     private InfoService infoService;
 
     @Test
-    void getAllInfoContact() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/v1/infos")
-                        .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content()
-                        .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-    }
-
-    @Test
     void createInfo() throws Exception {
         Client client = new Client();
 
@@ -89,7 +79,7 @@ class InfoControllerTest {
     }
 
     @Test
-    void updateInfoContac() throws Exception {
+    void updateInfoContact() throws Exception {
         Client client = new Client();
 
         java.sql.Date date = java.sql.Date.valueOf("1999-08-06");

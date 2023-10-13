@@ -10,7 +10,7 @@ public class DatabaseConnectionTest {
 
         String jdbcUrl = "jdbc:mysql://localhost:3306/sistema_vuelo";
         String username = "root";
-        String password = "29810523Jo$10"; // Cambiar clave de mysql local
+        String password = "08647"; // Cambiar clave de mysql local
 
         try {
             // Cargue el controlador MySQL JDBC driver

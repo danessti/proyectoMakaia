@@ -32,7 +32,7 @@ class AirportControllerTest {
     @Test
     void getAllAirports() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/airports")
-                        .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
+                        .with(SecurityMockMvcRequestPostProcessors.user("admin").password("ad123"))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content()

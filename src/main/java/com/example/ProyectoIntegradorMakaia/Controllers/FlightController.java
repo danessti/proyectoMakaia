@@ -35,11 +35,6 @@ public class FlightController {
     @GetMapping
     public ResponseEntity<List<Flight>> getAllFlights() {
         List<Flight> flights = flightService.getAllFlights();
-
-        if (flights.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
         return new ResponseEntity<>(flights, HttpStatus.OK);
     }
 

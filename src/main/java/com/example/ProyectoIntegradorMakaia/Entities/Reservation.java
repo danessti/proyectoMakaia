@@ -1,16 +1,12 @@
 package com.example.ProyectoIntegradorMakaia.Entities;
 
 import com.example.ProyectoIntegradorMakaia.Utils.ReservationStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor

@@ -60,5 +60,4 @@ public class UserClient implements UserDetails {
         return false;
     }
 
-
 }

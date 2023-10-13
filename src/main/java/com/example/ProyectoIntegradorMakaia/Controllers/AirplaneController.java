@@ -35,11 +35,6 @@ public class AirplaneController {
     @GetMapping
     public ResponseEntity<List<Airplane>> getAllAirplanes() {
         List<Airplane> airplanes = airplaneService.getAllAirplanes();
-
-        if (airplanes.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
         return new ResponseEntity<>(airplanes, HttpStatus.OK);
     }
 

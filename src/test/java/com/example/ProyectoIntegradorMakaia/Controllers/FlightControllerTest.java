@@ -35,7 +35,7 @@ class FlightControllerTest {
     @Test
     void getAllFlights() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/v1/flights")
-                        .with(SecurityMockMvcRequestPostProcessors.user("user").password("ad123"))
+                        .with(SecurityMockMvcRequestPostProcessors.user("admin").password("ad123"))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content()
