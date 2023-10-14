@@ -26,6 +26,8 @@ public class ReservationController {
     @ApiOperation(value = "Get all reservations", notes = "Retrieve the list of all reservations.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Reservas recuperadas exitosamente."),
+            @ApiResponse(code = 401, message = "Acceso denegado por falta de autorización."),
+            @ApiResponse(code = 403, message = "No tiene permisos para ingresar a este endpoint"),
             @ApiResponse(code = 404, message = "No se encontraron reservas.")
     })
     @GetMapping
@@ -61,6 +63,7 @@ public class ReservationController {
     @PreAuthorize("hasAnyRole('READ', 'WRITE')")
     @ApiOperation(value = "Get reservation by Id", notes = "Retrieves a reservation by its unique ID.")
     @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La petición se proceso correctamente"),
             @ApiResponse(code = 204, message = "Solicitud procesada correctamente pero sin contenido para devolver en la respuesta."),
             @ApiResponse(code = 301, message = "La URL a la que intentas acceder se ha movido permanentemente a otra URL."),
             @ApiResponse(code = 302, message = "La URL a la que intentas acceder se ha movido temporalmente a otra URL."),
@@ -92,9 +95,11 @@ public class ReservationController {
     @ApiOperation(value = "Update a reservation by Id", notes = "Update an existing reservation in the database by its unique Id.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Reserva actualizada correctamente."),
+            @ApiResponse(code = 201, message = "Creado correctamente"),
             @ApiResponse(code = 400, message = "Solicitud incorrecta, contiene datos incorrectos o invalidos que impiden " +
                     "la actualización."),
             @ApiResponse(code = 401, message = "Acceso denegado por falta de autorización."),
+            @ApiResponse(code = 403, message = "No tiene permisos para ingresar a este endpoint"),
             @ApiResponse(code = 404, message = "El servidor no ha encontrado el recurso solicitado por el usuario.")
     })
     @PutMapping("/{id}")
@@ -111,7 +116,10 @@ public class ReservationController {
     @PreAuthorize("hasRole('WRITE')")
     @ApiOperation(value = "Delete a reservation by Id", notes = "Delete an existing reservation in the database by its unique Id.")
     @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La petición se proceso correctamente"),
             @ApiResponse(code = 204, message = "El recurso se eliminó con éxito."),
+            @ApiResponse(code = 401, message = "Acceso denegado por falta de autorización."),
+            @ApiResponse(code = 403, message = "No tiene permisos para ingresar a este endpoint"),
             @ApiResponse(code = 404, message = "El recurso con el Id especificado no fue encontrado en la base de datos.")
     })
     @DeleteMapping("/{id}")

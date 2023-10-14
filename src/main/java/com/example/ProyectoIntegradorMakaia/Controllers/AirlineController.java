@@ -32,6 +32,8 @@ public class AirlineController {
     @ApiOperation(value = "Get all Airlines", notes = "Retrieve the list of all airlines.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Aerolíneas recuperadas exitosamente."),
+            @ApiResponse(code = 401, message = "Acceso denegado por falta de autorización."),
+            @ApiResponse(code = 403, message = "No tiene permisos para ingresar a este endpoint"),
             @ApiResponse(code = 404, message = "No se encontraron aerolíneas.")
     })
     @GetMapping
@@ -72,6 +74,7 @@ public class AirlineController {
     @PreAuthorize("hasAnyRole('READ', 'WRITE')")
     @ApiOperation(value = "Get Airline By Id", notes = "Retrieves an Airline by its unique ID.")
     @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La petición se proceso correctamente"),
             @ApiResponse(code = 204, message = "Solicitud procesada correctamente pero sin contenido para devolver en la respuesta."),
             @ApiResponse(code = 301, message = "La URL a la que intentas acceder se ha movido permanentemente a otra URL."),
             @ApiResponse(code = 302, message = "La URL a la que intentas acceder se ha movido temporalmente a otra URL."),
@@ -103,9 +106,11 @@ public class AirlineController {
     @ApiOperation(value = "Update an Airline by Id", notes = "Update an existing Airline in the database by its unique Id.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Aerolínea actualizada correctamente."),
+            @ApiResponse(code = 201, message = "Creado correctamente"),
            @ApiResponse(code = 400, message = "Solicitud incorrecta, contiene datos incorrectos o invalidos que impiden " +
                    "la actualización."),
             @ApiResponse(code = 401, message = "Acceso denegado por falta de autorización."),
+            @ApiResponse(code = 403, message = "No tiene permisos para ingresar a este endpoint"),
             @ApiResponse(code = 404, message = "El servidor no ha encontrado el recurso solicitado por el usuario.")
     })
     @PutMapping("/{id}")
@@ -122,7 +127,10 @@ public class AirlineController {
     @PreAuthorize("hasRole('WRITE')")
     @ApiOperation(value = "Delete an Airline by Id", notes = "Delete an existing Airline in the database by its unique Id.")
     @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La petición se proceso correctamente"),
             @ApiResponse(code = 204, message = "El recurso se eliminó con éxito."),
+            @ApiResponse(code = 401, message = "Acceso denegado por falta de autorización."),
+            @ApiResponse(code = 403, message = "No tiene permisos para ingresar a este endpoint"),
             @ApiResponse(code = 404, message = "El recurso con el Id especificado no fue encontrado en la base de datos.")
     })
     @DeleteMapping("/{id}")
