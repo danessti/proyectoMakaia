@@ -18,7 +18,6 @@ on:
 jobs:
 
   test_build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,5 +29,11 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
+    - name: clean project
+      run: chmod +x ./gradlew && ./gradlew clean
+    - name: run all tests
+      run: ./gradlew testClasses
+    - name: create .jar and install
+      run: ./gradlew bootJar
       with:
         arguments: build
