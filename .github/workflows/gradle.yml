@@ -35,5 +35,3 @@ jobs:
       run: ./gradlew testClasses
     - name: create .jar and install
       run: ./gradlew bootJar
-      with:
-        arguments: build
