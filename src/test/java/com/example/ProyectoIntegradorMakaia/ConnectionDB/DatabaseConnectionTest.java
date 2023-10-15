@@ -8,9 +8,11 @@ public class DatabaseConnectionTest {
 
     public static void main(String[] args) {
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/sistema_vuelo";
+//        String jdbcUrl = "jdbc:mysql://localhost:3306/sistema_vuelo"; // conexión local
+        String jdbcUrl = "jdbc:mysql://root:DbL8iwwQOFEUPBdj8T2v@containers-us-west-114.railway.app:7000/railway";
         String username = "root";
-        String password = "08647"; // Cambiar clave de mysql local
+//        String password = "08647"; // Cambiar clave de mysql local
+        String password = "DbL8iwwQOFEUPBdj8T2v";
 
         try {
             // Cargue el controlador MySQL JDBC driver

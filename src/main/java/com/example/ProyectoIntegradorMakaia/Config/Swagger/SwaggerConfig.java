@@ -25,12 +25,16 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
+        Contact[] contacts = new Contact[] {
+                new Contact("Daniel Espinosa", "https://www.linkedin.com/in/danessti/", "danessti@gmail.com"),
+                new Contact("Jorge Gomez", "https://www.linkedin.com/in/jorge-enrique-g%C3%B3mez-buitrago-31b083278/", "jorgegomez98125@gmail.com")
+        };
+
         return new ApiInfoBuilder().title("API para gestión de Sistema de Vuelos")
                 .description("Esta API RESTful permite gestionar el Sistema de Reservas de Vuelos proporciona servicios para buscar vuelos, " +
                         "realizar reservas, gestionar usuarios y cooperar con sistemas de aerolíneas.")
                 .version("1.0.0")
-                .contact(new Contact("Daniel Espinosa", "https://www.linkedin.com/in/danessti/", "danessti@gmail.com"))
-                .contact(new Contact("Jorge Gomez", "https://www.linkedin.com/in/jorge-enrique-g%C3%B3mez-buitrago-31b083278/", "jorgegomez98125@gmail.com"))
+                .contact(contacts[0])
                 .build();
     }
 
