@@ -14,7 +14,7 @@ java {
 }
 
 springBoot {
-	mainClass = 'com/example/ProyectoIntegradorMakaia/ProyectoIntegradorMakaiaApplication.java' // Reemplaza con la ruta de tu clase principal
+	mainClass = 'com.example.ProyectoIntegradorMakaia.ProyectoIntegradorMakaiaApplication.java' // Reemplaza con la ruta de tu clase principal
 }
 
 configurations {
