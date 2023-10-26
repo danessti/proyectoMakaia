@@ -3,7 +3,6 @@ package com.example.ProyectoIntegradorMakaia.Config;
 import com.example.ProyectoIntegradorMakaia.Security.UserDetailsServiceImpl;
 import com.example.ProyectoIntegradorMakaia.Security.jwt.JwtAuthenticationFilter;
 import com.example.ProyectoIntegradorMakaia.Security.jwt.JwtAuthorizationFilter;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,11 +23,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableConfigurationProperties
-@RequiredArgsConstructor
 @Profile("!test")
 public class WebSecurityConfig {
 
     private final JwtAuthorizationFilter jwtAuthorizationFilter;
+
+    public WebSecurityConfig(JwtAuthorizationFilter jwtAuthorizationFilter) {
+        this.jwtAuthorizationFilter = jwtAuthorizationFilter;
+    }
 
     @Bean
     public SecurityFilterChain filterChain (HttpSecurity httpSecurity,
